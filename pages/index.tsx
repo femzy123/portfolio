@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import LeftSide from "../components/LeftSide";
 import RightSide from "../components/RightSide";
 import {motion} from "framer-motion"
+import Banner from "../components/Banner";
 
 const Home: NextPage = () => {
   return (
@@ -26,7 +27,9 @@ const Home: NextPage = () => {
             <LeftSide />
           </motion.div>
 
-          <div className="h-[88vh] mx-auto p-4">Middle</div>
+          <div className="h-[88vh] w-full mx-auto p-4">
+            <Banner />
+          </div>
 
           <motion.div
             initial={{ opacity: 0 }}
