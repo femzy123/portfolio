@@ -13,7 +13,7 @@ const Navbar = () => {
         >
           <Link
             href="/"
-            className="w-14 text-xl hover:text-2xl font-bold border-2 border-white rounded p-2 transition-colors duration-500 linear"
+            className="w-14 text-xl hover:text-2xl hover:bg-hoverColor font-bold border-2 border-white rounded p-2 transition-all duration-300 linear"
           >
             00
           </Link>
