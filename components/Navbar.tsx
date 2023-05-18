@@ -35,7 +35,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href="#home"
+              href="#about"
               className="font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
             >
               <motion.li
@@ -48,7 +48,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href="#home"
+              href="#experience"
               className="font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
             >
               <motion.li
@@ -61,7 +61,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href="#home"
+              href="#project"
               className="font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
             >
               <motion.li
@@ -74,7 +74,7 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href="#home"
+              href="#contact"
               className="font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
             >
               <motion.li
