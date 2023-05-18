@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { AiFillThunderbolt } from "react-icons/ai";
 import { TiArrowForward } from "react-icons/ti";
 
-const RpInc = () => {
+const Ansa = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -10,45 +10,51 @@ const RpInc = () => {
       transition={{ delay: 0.1 }}
     >
       <h3 className="flex gap-1 font-medium text-xl font-titleFont">
-        Lead Engineer{" "}
-        <span className="text-textGreen tracking-wide">@RP Inc.</span>
+        Software Developer Intern{" "}
+        <span className="text-textGreen tracking-wide">@ANSA</span>
       </h3>
       <p className="text-sm mt-1 font-medium text-textDark">
-        Oct 2021 - Present
+        Aug 2013 - Nov 2013
       </p>
       <ul className="mt-6 flex flex-col gap-3">
         <li className="text-base flex items-center gap-2 text-textDark">
           <span className="text-textGreen">
             <TiArrowForward />
           </span>
-          Spearheaded the design and development of the SprintZero app,
-          employing best software engineering practices.
+          Developed an intranet web application for sales reporting, utilizing
+          sound software architecture principles.
         </li>
         <li className="text-base flex items-center gap-2 text-textDark">
           <span className="text-textGreen">
             <TiArrowForward />
           </span>
-          Conducted in-depth research on cloud technologies to identify optimal
-          solutions that would enhance the functionality and performance of the
-          SprintZero app.
+          Conducted repair and maintenance of computer hardware, ensuring
+          reliable and efficient systems.
         </li>
         <li className="text-base flex items-center gap-2 text-textDark">
           <span className="text-textGreen">
             <TiArrowForward />
           </span>
-          Collaborated closely with the project management team to contribute to
-          strategic planning and ensure project milestones were achieved.
+          Successfully handled administrative duties, contributing to the smooth
+          functioning of the organization.
         </li>
         <li className="text-base flex items-center gap-2 text-textDark">
           <span className="text-textGreen">
             <TiArrowForward />
           </span>
-          Demonstrated meticulousness in documenting codes and technologies,
-          enabling seamless knowledge transfer and efficient maintenance.
+          Installed computer system software, ensuring a secure and optimized
+          computing environment.
+        </li>
+        <li className="text-base flex items-center gap-2 text-textDark">
+          <span className="text-textGreen">
+            <TiArrowForward />
+          </span>
+          Prepared detailed weekly reports on ongoing projects, enabling
+          effective project tracking and communication.
         </li>
       </ul>
     </motion.div>
   );
 };
 
-export default RpInc;
+export default Ansa;

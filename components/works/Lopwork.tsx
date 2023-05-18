@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { AiFillThunderbolt } from "react-icons/ai";
 import { TiArrowForward } from "react-icons/ti";
 
-const RpInc = () => {
+const Lopwork = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -10,45 +10,44 @@ const RpInc = () => {
       transition={{ delay: 0.1 }}
     >
       <h3 className="flex gap-1 font-medium text-xl font-titleFont">
-        Lead Engineer{" "}
-        <span className="text-textGreen tracking-wide">@RP Inc.</span>
+        Software Developer{" "}
+        <span className="text-textGreen tracking-wide">@Lopworks</span>
       </h3>
       <p className="text-sm mt-1 font-medium text-textDark">
-        Oct 2021 - Present
+        Sept 2018 - Feb 2020
       </p>
       <ul className="mt-6 flex flex-col gap-3">
         <li className="text-base flex items-center gap-2 text-textDark">
           <span className="text-textGreen">
             <TiArrowForward />
           </span>
-          Spearheaded the design and development of the SprintZero app,
-          employing best software engineering practices.
+          Demonstrated expertise in API management, utilizing IBM API Connect
+          and Tyk to streamline and secure communication channels.
         </li>
         <li className="text-base flex items-center gap-2 text-textDark">
           <span className="text-textGreen">
             <TiArrowForward />
           </span>
-          Conducted in-depth research on cloud technologies to identify optimal
-          solutions that would enhance the functionality and performance of the
-          SprintZero app.
+          Leveraged Vue.js, React.js, and Elixir to build scalable applications,
+          implementing robust software architecture patterns.
         </li>
         <li className="text-base flex items-center gap-2 text-textDark">
           <span className="text-textGreen">
             <TiArrowForward />
           </span>
-          Collaborated closely with the project management team to contribute to
-          strategic planning and ensure project milestones were achieved.
+          Led the planning and development of applications, ensuring alignment
+          with client requirements and industry best practices.
         </li>
         <li className="text-base flex items-center gap-2 text-textDark">
           <span className="text-textGreen">
             <TiArrowForward />
           </span>
-          Demonstrated meticulousness in documenting codes and technologies,
-          enabling seamless knowledge transfer and efficient maintenance.
+          Conducted comprehensive training sessions for clients&apos; staff,
+          empowering them to effectively utilize various technologies.
         </li>
       </ul>
     </motion.div>
   );
 };
 
-export default RpInc;
+export default Lopwork;

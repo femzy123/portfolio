@@ -14,21 +14,36 @@ const Nativshark = () => {
         <span className="text-textGreen tracking-wide">@Nativshark</span>
       </h3>
       <p className="text-sm mt-1 font-medium text-textDark">
-        Jan 2023 - Present
+        March 2020 - Dec 2020
       </p>
       <ul className="mt-6 flex flex-col gap-3">
         <li className="text-base flex items-center gap-2 text-textDark">
           <span className="text-textGreen">
             <TiArrowForward />
           </span>
-          Design and Development of the SprintZero app.
+          Played a key role in developing the core engine that powered the
+          NativShark platform, employing sound software architecture principles.
         </li>
         <li className="text-base flex items-center gap-2 text-textDark">
           <span className="text-textGreen">
             <TiArrowForward />
           </span>
-          Research on cloud technologies to determine how they can benefit the
-          SprintZero app.
+          Conducted extensive research on cloud technologies, leveraging
+          findings to optimize and enhance the NativShark platform.
+        </li>
+        <li className="text-base flex items-center gap-2 text-textDark">
+          <span className="text-textGreen">
+            <TiArrowForward />
+          </span>
+          Contributed to project management planning, ensuring alignment with
+          business objectives and timely deliverables.
+        </li>
+        <li className="text-base flex items-center gap-2 text-textDark">
+          <span className="text-textGreen">
+            <TiArrowForward />
+          </span>
+          Ensured comprehensive documentation of codes and technologies,
+          enabling effective collaboration and future scalability.
         </li>
       </ul>
     </motion.div>
