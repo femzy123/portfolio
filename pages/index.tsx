@@ -6,6 +6,7 @@ import RightSide from "../components/RightSide";
 import {motion} from "framer-motion"
 import Banner from "../components/Banner";
 import About from "../components/About";
+import Experience from "../components/Experience";
 
 const Home: NextPage = () => {
   return (
@@ -31,6 +32,7 @@ const Home: NextPage = () => {
           <div className="h-[88vh] w-full mx-auto p-4">
             <Banner />
             <About />
+            <Experience />
           </div>
 
           <motion.div
