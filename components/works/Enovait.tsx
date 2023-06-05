@@ -21,8 +21,9 @@ const Enovait = () => {
           <span className="text-textGreen">
             <TiArrowForward />
           </span>
-          Created dynamic and user-friendly websites tailored to meet clients'
-          specific needs, employing modern web development frameworks.
+          Created dynamic and user-friendly websites tailored to meet
+          clients&apos; specific needs, employing modern web development
+          frameworks.
         </li>
         <li className="text-base flex items-center gap-2 text-textDark">
           <span className="text-textGreen">
