@@ -15,24 +15,43 @@ const About = () => {
       <div className="flex flex-col lgl:flex-row gap-16">
         <div className="w-full lgl:w-2/3 text-base text-textDark font-medium flex flex-col gap-4">
           <p>
-            I am a friendly, approachable web developer. HTML, CSS, JavaScript
-            and PHP are the tools of my trade. I am familiar with responsive
-            design techniques, approaching all projects with a mobile-first
-            view, ensuring that what I produce will look great regardless of the
-            type of device it is being viewed on. I have over 3 years’
-            experience hands on experience in web development using various
-            programming languages. I love creating websites. This is all my
-            motivation pushing me to improve my skills in multiple disciplines.
-            User Experience Design, User Interface Design, Front-End
-            Development, Back-End Development. I keep up-to-date on the latest
-            developments within the Web Industry, taking new ways of working and
-            the use of frameworks into my development repotoire. I specialise in
-            website and mobile apps development, creating responsive web
-            applications suited to every type of device. I offer a complete web
-            solution to my clients. I can guide you through the early stages of
-            project planning and research, help you with information
-            architecture and user experience, design your website, and finally
-            build the site for you.
+            With a robust career spanning over 6 years as a skilled software
+            engineer, I have made significant contributions to numerous
+            institutions, building applications that cater to diverse sectors
+            such as finance, education, product management, design, and SAAS. My
+            expertise lies in utilizing a wide range of cutting-edge
+            technologies, including JavaScript, TypeScript, React, Next.js,
+            Node.js, Nest.js, GCP, and AWS, to develop highly functional and
+            efficient solutions.
+          </p>
+          <p>
+            As a full-stack engineer, I possess a comprehensive understanding of
+            both front-end and back-end development, allowing me to seamlessly
+            navigate the entire software development lifecycle.
+          </p>
+          <p>
+            What truly drives me is the opportunity to harness technology and
+            make a tangible difference in people&apos;s lives. I am passionate
+            about creating applications and systems that enhance productivity,
+            streamline processes, and simplify daily tasks for users. This
+            dedication to improving daily experiences through technology has
+            been the cornerstone of my work throughout my career.
+          </p>
+          {/* <p>
+            Looking ahead, my aspirations extend towards the realms of AI and
+            cybersecurity. I am eager to dive deeper into these fields,
+            leveraging artificial intelligence to develop intelligent systems
+            that can automate complex tasks and enhance decision-making
+            processes. Additionally, I am keen on contributing to the
+            cybersecurity landscape, working towards building robust and secure
+            applications that safeguard sensitive data and protect against
+            evolving threats.
+          </p> */}
+          <p>
+            With a drive for continuous learning and a desire to stay at the
+            forefront of technological advancements, I am committed to expanding
+            my knowledge and skill set to deliver innovative solutions that
+            positively impact both individuals and businesses.
           </p>
           <ul className="max-w-[450px] text-sm font-titleFont grid grid-cols-2 gap-2 mt-6">
             <li className="flex items-center gap-2">

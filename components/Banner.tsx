@@ -32,13 +32,16 @@ const Banner = () => {
         transition={{ duration: 0.5, delay: 0.6 }}
         className="text-base md:max-w-[650px] text-textDark font-medium"
       >
-        I am a software engineer with 6+ years of experience in Javascript,
-        React, Nextjs amongst many others. I have a strong foundation in
-        front-end & back-end development and I am skilled in creating
-        user-friendly and responsive web applications using Javascript and its
-        ecosystem. <br />
+        I&apos;m a seasoned software engineer with 6+ years of experience,
+        specializing in building applications across various industries. From
+        finance and education to product management and design, I have a diverse
+        background in creating innovative solutions. With expertise in
+        technologies such as JavaScript, TypeScript, React, and Node.js, I'm
+        passionate about using technology to simplify and enhance daily life.
+        Explore my portfolio to see examples of my work and how I bring
+        creativity and functionality to every project. <br />
         <Link href="/">
-          <span className="text-textGreen inline-flex relative cursor-pointer h-7 overflow-x-hidden group">
+          <span className="text-textGreen inline-flex relative cursor-pointer h-7 overflow-x-hidden group mt-2">
             Learn More
             <span className="absolute w-full h-[1px] bg-textGreen left-0 bottom-1 -translate-x-[110%] group-hover:translate-x-0 transition-transform duration-500"></span>
           </span>
