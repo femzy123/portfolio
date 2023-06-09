@@ -36,9 +36,9 @@ const Banner = () => {
         specializing in building applications across various industries. From
         finance and education to product management and design, I have a diverse
         background in creating innovative solutions. With expertise in
-        technologies such as JavaScript, TypeScript, React, and Node.js, I'm
-        passionate about using technology to simplify and enhance daily life.
-        Explore my portfolio to see examples of my work and how I bring
+        technologies such as JavaScript, TypeScript, React, and Node.js,
+        I&apos;m passionate about using technology to simplify and enhance daily
+        life. Explore my portfolio to see examples of my work and how I bring
         creativity and functionality to every project. <br />
         <Link href="/">
           <span className="text-textGreen inline-flex relative cursor-pointer h-7 overflow-x-hidden group mt-2">
