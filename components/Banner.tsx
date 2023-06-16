@@ -40,12 +40,12 @@ const Banner = () => {
         I&apos;m passionate about using technology to simplify and enhance daily
         life. Explore my portfolio to see examples of my work and how I bring
         creativity and functionality to every project. <br />
-        <Link href="/">
+        {/* <Link href="/">
           <span className="text-textGreen inline-flex relative cursor-pointer h-7 overflow-x-hidden group mt-2">
             Learn More
             <span className="absolute w-full h-[1px] bg-textGreen left-0 bottom-1 -translate-x-[110%] group-hover:translate-x-0 transition-transform duration-500"></span>
           </span>
-        </Link>
+        </Link> */}
       </motion.p>
 
       <motion.button
