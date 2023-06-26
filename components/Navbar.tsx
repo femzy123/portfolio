@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { MdOutlineClose } from "react-icons/md";
 import { TbBrandGithub } from "react-icons/tb";
 import { SlSocialLinkedin, SlSocialTwitter } from "react-icons/sl";
+import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
 
 const Navbar = () => {
   const ref = useRef<string | any>("");
@@ -51,6 +52,9 @@ const Navbar = () => {
 
         <div className="hidden mdl:inline-flex items-center gap-7">
           <ul className="flex text-[14px] gap-7">
+            <motion.li className="text-lg cursor-pointer duration-300 nav-link">
+              <BsFillSunFill />
+            </motion.li>
             <Link
               href="#home"
               className="font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
