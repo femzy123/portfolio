@@ -30,7 +30,7 @@ const Projects = () => {
             Featured Project
           </p> */}
             <h3 className="text-2xl font-bold">FemGPT</h3>
-            <p className="bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
+            <p className="bg-gray-200 dark:bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
               FemGPT is an advanced ChatGPT clone app built with JavaScript,
               Node.js, HTML, and CSS. It offers a seamless interface for
               engaging in intelligent and dynamic conversations. With its
@@ -64,7 +64,7 @@ const Projects = () => {
 
           <div className="w-full xl:w-1/2 flex flex-col gap-6 lgl:justify-between items-start text-right xl:-mr-16 z-10">
             <h3 className="text-2xl font-bold">Nativshark</h3>
-            <p className="bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
+            <p className="bg-gray-200 dark:bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
               NativShark is a revolutionary language learning platform that
               leverages artificial intelligence and immersive techniques to
               provide a highly effective and engaging language learning
@@ -102,7 +102,7 @@ const Projects = () => {
             Featured Project
           </p> */}
             <h3 className="text-2xl font-bold">Sumzy</h3>
-            <p className="bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
+            <p className="bg-gray-200 dark:bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
               Sumzy is an open-source article summarizer that simplifies your
               reading experience by transforming lengthy articles into clear and
               concise summaries. It utilizes the power of OpenAI GPT-4 to
@@ -134,7 +134,7 @@ const Projects = () => {
 
           <div className="w-full xl:w-1/2 flex flex-col gap-6 lgl:justify-between items-start text-right xl:-mr-16 z-10">
             <h3 className="text-2xl font-bold">Covid 19 Tracker</h3>
-            <p className="bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
+            <p className="bg-gray-200 dark:bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
               Covid19-tracker is a comprehensive and user-friendly app designed
               to track and display up-to-date Covid-19 data from around the
               world. Built with React, Firebase, Chart.js, and Leaflet, this app
@@ -170,7 +170,7 @@ const Projects = () => {
             Featured Project
           </p> */}
             <h3 className="text-2xl font-bold">Femgram</h3>
-            <p className="bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
+            <p className="bg-gray-200 dark:bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
               Femgram is a stylish photo gallery web app powered by React,
               Firebase, and Framer Motion. It provides a seamless user
               experience for browsing and showcasing photos. With its minimalist

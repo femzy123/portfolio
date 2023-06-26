@@ -1,7 +1,27 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRef } from "react";
 
 const Banner = () => {
+  const ref = useRef<string | any>("");
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    const href = e.currentTarget.href;
+    const targetId = href.replace(/.*\#/, "");
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({
+      behavior: "smooth",
+    });
+
+    // Update the class name of the clicked link
+    const links = document.querySelectorAll(".nav-link");
+    links.forEach((link) => {
+      link.classList.remove("active");
+    });
+    e.currentTarget.classList.add("active");
+  };
+
   return (
     <section
       id="home"
@@ -11,7 +31,7 @@ const Banner = () => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="text-lg font-titleFont tracking-wide text-textGreen"
+        className="text-lg font-titleFont tracking-wide text-textDark dark:text-textGreen"
       >
         Hi, my name is
       </motion.h3>
@@ -48,14 +68,16 @@ const Banner = () => {
         </Link> */}
       </motion.p>
 
-      <motion.button
-        initial={{ y: 10, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.9 }}
-        className="w-52 h-14 text-sm font-titleFont border border-textGreen rounded-md text-textGreen tracking-wide hover:bg-hoverColor duration-300"
-      >
-        Check out my Project!
-      </motion.button>
+      <Link href="#project" onClick={handleScroll}>
+        <motion.button
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.9 }}
+          className="w-52 h-14 text-sm font-titleFont border border-gray-700 dark:border-textGreen rounded-md text-gray-700 dark:text-textGreen tracking-wide hover:bg-hoverColor duration-300"
+        >
+          Check out my Projects!
+        </motion.button>
+      </Link>
     </section>
   );
 };

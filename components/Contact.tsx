@@ -7,7 +7,7 @@ const Contact = () => {
       id="contact"
       className="max-w-contentContainer mx-auto py-10 xl:py-32 flex flex-col gap-4 items-center justify-center"
     >
-      <p className="font-titleFont text-lg text-textGreen font-semibold flex items-center tracking-wide">
+      <p className="font-titleFont text-lg text-textDark dark:text-textGreen font-semibold flex items-center tracking-wide">
         What&apos;s Next?
       </p>
       <h2 className="font-titleFont text-5xl font-semibold">Get In Touch</h2>
@@ -17,7 +17,7 @@ const Contact = () => {
         back to you!
       </p>
       <Link href="mailto:obafemiogunmokun@gmail.com">
-        <button className="w-40 h-14 border border-textGreen rounded">Say Hello</button>
+        <button className="w-40 h-14 border border-bodyColor dark:border-textGreen rounded">Say Hello</button>
       </Link>
     </section>
   );

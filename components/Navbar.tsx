@@ -1,14 +1,21 @@
 import Link from "next/link";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MdOutlineClose } from "react-icons/md";
 import { TbBrandGithub } from "react-icons/tb";
 import { SlSocialLinkedin, SlSocialTwitter } from "react-icons/sl";
 import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
+import { useTheme } from "next-themes";
 
 const Navbar = () => {
   const ref = useRef<string | any>("");
   const [showMenu, setShowMenu] = useState(false);
+  const { systemTheme, theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
@@ -34,8 +41,25 @@ const Navbar = () => {
     }
   }
 
+  const renderThemeChanger = () => {
+    if(!mounted) return null;
+
+    const currentTheme = theme === "system" ? systemTheme : theme ;
+
+    if(currentTheme ==="dark"){
+      return (
+        <BsFillSunFill className="text-lg text-yellow-500 " role="button" onClick={() => setTheme('light')} />
+      )
+    }
+    else {
+      return (
+        <BsFillMoonFill className="text-lg text-bodyColor " role="button" onClick={() => setTheme('dark')} />
+      )
+    }
+  };
+
   return (
-    <div className="w-full shadow-navbarShadow h-20 lg:h-[12vh] sticky top-0 z-50 bg-bodyColor px-4">
+    <div className="w-full shadow-navbarShadow h-20 lg:h-[12vh] sticky top-0 z-50 bg-gray-200 dark:bg-bodyColor px-4">
       <div className="max-w-container h-full mx-auto py-1 font-titleFont flex items-center justify-between">
         <motion.div
           initial={{ opacity: 0 }}
@@ -44,7 +68,7 @@ const Navbar = () => {
         >
           <Link
             href="/"
-            className="w-14 text-xl hover:text-2xl hover:bg-hoverColor font-bold border-2 border-white rounded p-2 transition-all duration-300 linear"
+            className="w-14 text-xl hover:text-2xl hover:bg-hoverColor font-bold border-2 border-bodyColor dark:border-white rounded p-2 transition-all duration-300 linear"
           >
             00
           </Link>
@@ -53,11 +77,11 @@ const Navbar = () => {
         <div className="hidden mdl:inline-flex items-center gap-7">
           <ul className="flex text-[14px] gap-7">
             <motion.li className="text-lg cursor-pointer duration-300 nav-link">
-              <BsFillSunFill />
+              {renderThemeChanger()}
             </motion.li>
             <Link
               href="#home"
-              className="font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+              className="font-medium text-gray-800 dark:text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
               onClick={handleScroll}
             >
               <motion.li
@@ -71,7 +95,7 @@ const Navbar = () => {
 
             <Link
               href="#about"
-              className="font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+              className="font-medium text-gray-800 dark:text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
               onClick={handleScroll}
             >
               <motion.li
@@ -85,7 +109,7 @@ const Navbar = () => {
 
             <Link
               href="#experience"
-              className="font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+              className="font-medium text-gray-800 dark:text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
               onClick={handleScroll}
             >
               <motion.li
@@ -99,7 +123,7 @@ const Navbar = () => {
 
             <Link
               href="#project"
-              className="font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+              className="font-medium text-gray-800 dark:text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
               onClick={handleScroll}
             >
               <motion.li
@@ -107,13 +131,13 @@ const Navbar = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.4 }}
               >
-                Project
+                Projects
               </motion.li>
             </Link>
 
             <Link
               href="#contact"
-              className="font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+              className="font-medium text-gray-800 dark:text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
               onClick={handleScroll}
             >
               <motion.li
@@ -130,7 +154,7 @@ const Navbar = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="px-4 py-2 rounded-md text-textGreen text-[14px] border border-textGreen hover:bg-hoverColor duration-300"
+              className="px-4 py-2 rounded-md text-gray-800 dark:text-textGreen text-[14px] border-2 font-semibold border-gray-800 dark:border-textGreen hover:bg-hoverColor duration-300"
             >
               Resume
             </motion.button>
@@ -140,11 +164,11 @@ const Navbar = () => {
         {/* Small Icon section */}
         <div
           onClick={() => setShowMenu(true)}
-          className="w-6 h-5 flex flex-col justify-between items-center mdl:hidden text-4xl text-textGreen cursor-pointer overflow-hidden group"
+          className="w-6 h-5 flex flex-col justify-between items-center mdl:hidden text-4xl text-textDark dark:text-textGreen cursor-pointer overflow-hidden group"
         >
-          <span className="w-full h-[2px] bg-textGreen inline-flex transform group-hover:translate-x-2 transition-all ease-in-out duration-300"></span>
-          <span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300"></span>
-          <span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300"></span>
+          <span className="w-full h-[2px] bg-textDark dark:bg-textGreen inline-flex transform group-hover:translate-x-2 transition-all ease-in-out duration-300"></span>
+          <span className="w-full h-[2px] bg-textDark dark:bg-textGreen inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300"></span>
+          <span className="w-full h-[2px] bg-textDark dark:bg-textGreen inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300"></span>
         </div>
 
         {showMenu && (
@@ -157,11 +181,11 @@ const Navbar = () => {
               initial={{ x: 20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.1 }}
-              className="w-[80%] h-full overflow-y-scroll scrollbarHide bg-[#112240] flex flex-col items-center px-4 py-10 relative"
+              className="w-[80%] h-full overflow-y-scroll scrollbarHide bg-gray-100 dark:bg-[#112240] flex flex-col items-center px-4 py-10 relative"
             >
               <MdOutlineClose
                 onClick={() => setShowMenu(false)}
-                className="text-3xl text-textGreen cursor-pointer hover:text-red-500 absolute top-4 right-4"
+                className="text-3xl text-textDark dark:text-textGreen cursor-pointer hover:text-red-500 absolute top-4 right-4"
               />
               <div className="flex flex-col items-center gap-7">
                 <ul className="flex flex-col text-base gap-7">
@@ -244,7 +268,7 @@ const Navbar = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6, ease: "easeIn" }}
-                    className="w-32 h-10 rounded-md text-textGreen text-[13px] border border-textGreen hover:bg-hoverColor duration-300"
+                    className="w-32 h-10 rounded-md text-textDark dark:text-textGreen text-[13px] border border-textDark dark:border-textGreen hover:bg-hoverColor duration-300"
                   >
                     Resume
                   </motion.button>
@@ -257,7 +281,7 @@ const Navbar = () => {
                   className="flex items-center justify-center w-full gap-4"
                 >
                   <Link href="https://github.com/femzy123" target="_blank">
-                    <span className="w-10 h-10 text-xl bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
+                    <span className="w-10 h-10 text-xl bg-textDark/20 dark:bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
                       <TbBrandGithub />
                     </span>
                   </Link>
@@ -266,13 +290,13 @@ const Navbar = () => {
                     href="https://www.linkedin.com/in/obafemiogunmokun/"
                     target="_blank"
                   >
-                    <span className="w-10 h-10 text-xl bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
+                    <span className="w-10 h-10 text-xl  bg-textDark/20 dark:bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
                       <SlSocialLinkedin />
                     </span>
                   </Link>
 
                   <Link href="https://twitter.com/femzycodes" target="_blank">
-                    <span className="w-10 h-10 text-xl bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
+                    <span className="w-10 h-10 text-xl  bg-textDark/20 dark:bg-hoverColor rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:-translate-y-2 transition-all duration-300">
                       <SlSocialTwitter />
                     </span>
                   </Link>
@@ -284,10 +308,18 @@ const Navbar = () => {
                   transition={{ delay: 1.0, ease: "easeIn" }}
                   href="mailto:obafemiogunmokun@gmail.com"
                 >
-                  <p className="text-sm w-72 tracking-widest text-textGreen text-center mt-4">
+                  <p className="text-sm w-72 tracking-widest text-textDark dark:text-textGreen text-center mt-4">
                     Send a message!
                   </p>
                 </motion.a>
+
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.2, ease: "easeIn" }}
+                >
+                  {renderThemeChanger()}
+                </motion.div>
               </div>
             </motion.div>
           </div>

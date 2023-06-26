@@ -55,49 +55,49 @@ const About = () => {
           </p>
           <ul className="max-w-[450px] text-sm font-titleFont grid grid-cols-2 gap-2 mt-6">
             <li className="flex items-center gap-2">
-              <span className="text-textGreen">
+              <span className="text-textDark dark:text-textGreen">
                 <AiFillThunderbolt />
               </span>
               JavaScript (ES6+)
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-textGreen">
+              <span className="text-textDark dark:text-textGreen">
                 <AiFillThunderbolt />
               </span>
               Typescript
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-textGreen">
+              <span className="text-textDark dark:text-textGreen">
                 <AiFillThunderbolt />
               </span>
               ReactJs
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-textGreen">
+              <span className="text-textDark dark:text-textGreen">
                 <AiFillThunderbolt />
               </span>
               NodeJs
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-textGreen">
+              <span className="text-textDark dark:text-textGreen">
                 <AiFillThunderbolt />
               </span>
               NextJs
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-textGreen">
+              <span className="text-textDark dark:text-textGreen">
                 <AiFillThunderbolt />
               </span>
               Google Cloud
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-textGreen">
+              <span className="text-textDark dark:text-textGreen">
                 <AiFillThunderbolt />
               </span>
               Mongodb
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-textGreen">
+              <span className="text-textDark dark:text-textGreen">
                 <AiFillThunderbolt />
               </span>
               PostgreSql
