@@ -40,12 +40,12 @@ const Home: NextPage = () => {
             <Projects />
             <Contact />
             <Footer />
-            <div className="flex justify-center text-[10px]">
+            {/* <div className="flex justify-center text-[10px]">
               Design inspired by:{" "}
               <Link href="https://brittanychiang.com/" target="_blank" className="ml-1">
                 Brittany Chiang
               </Link>{" "}
-            </div>
+            </div> */}
           </div>
 
           <motion.div
