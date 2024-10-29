@@ -15,27 +15,25 @@ const About = () => {
       <div className="flex flex-col lgl:flex-row gap-16">
         <div className="w-full lgl:w-2/3 text-base text-textDark font-medium flex flex-col gap-4">
           <p>
-            With a robust career spanning over 6 years as a skilled software
-            engineer, I have made significant contributions to numerous
-            institutions, building applications that cater to diverse sectors
-            such as finance, education, product management, design, and SAAS. My
-            expertise lies in utilizing a wide range of cutting-edge
-            technologies, including JavaScript, TypeScript, React, Next.js,
-            Node.js, Nest.js, GCP, and AWS, to develop highly functional and
-            efficient solutions.
+            With over six years of experience as a software engineer, I have
+            contributed to diverse sectors including finance, education, product
+            management, design, and SaaS by building impactful applications. My
+            technical expertise spans a robust stack of modern technologies like
+            JavaScript, TypeScript, React, Next.js, Node.js, Nest.js, GCP, and
+            AWS, which I leverage to create functional and efficient solutions.
           </p>
           <p>
-            As a full-stack engineer, I possess a comprehensive understanding of
-            both front-end and back-end development, allowing me to seamlessly
-            navigate the entire software development lifecycle.
+            As a full-stack engineer, I bring a deep understanding of both
+            front-end and back-end development, enabling me to seamlessly manage
+            the entire software development lifecycle.
           </p>
           <p>
-            What truly drives me is the opportunity to harness technology and
-            make a tangible difference in people&apos;s lives. I am passionate
-            about creating applications and systems that enhance productivity,
-            streamline processes, and simplify daily tasks for users. This
-            dedication to improving daily experiences through technology has
-            been the cornerstone of my work throughout my career.
+            I am driven by a passion for harnessing technology to make a
+            tangible difference in people&apos;s lives. My focus is on building
+            applications and systems that enhance productivity, streamline
+            processes, and simplify daily tasks for users. This commitment to
+            improving user experiences has been the cornerstone of my work
+            throughout my career.
           </p>
           {/* <p>
             Looking ahead, my aspirations extend towards the realms of AI and
@@ -48,10 +46,10 @@ const About = () => {
             evolving threats.
           </p> */}
           <p>
-            With a drive for continuous learning and a desire to stay at the
-            forefront of technological advancements, I am committed to expanding
-            my knowledge and skill set to deliver innovative solutions that
-            positively impact both individuals and businesses.
+            With a dedication to continuous learning and a desire to stay at the
+            cutting edge, I am committed to expanding my expertise and
+            delivering innovative solutions that positively impact both
+            individuals and businesses.
           </p>
           <ul className="max-w-[450px] text-sm font-titleFont grid grid-cols-2 gap-2 mt-6">
             <li className="flex items-center gap-2">
@@ -94,6 +92,18 @@ const About = () => {
               <span className="text-textDark dark:text-textGreen">
                 <AiFillThunderbolt />
               </span>
+              AWS
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="text-textDark dark:text-textGreen">
+                <AiFillThunderbolt />
+              </span>
+              Supabase
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="text-textDark dark:text-textGreen">
+                <AiFillThunderbolt />
+              </span>
               Mongodb
             </li>
             <li className="flex items-center gap-2">
@@ -105,18 +115,18 @@ const About = () => {
           </ul>
         </div>
 
-        <div className="w-full lgl:w-1/3 h-80 relative group">
-          <div className="absolute w-full h-80 -left-6 -top-6 rounded-lg">
+        <div className="w-full lgl:w-1/3 h-full relative group">
+          <div className="absolute w-full -left-6 -top-6 rounded-lg">
             <div className="w-full h-full relative z-20 flex pl-6 lgl:pl-0">
               <Image
                 className="rounded-lg h-full object-cover"
                 src={profileImg}
                 alt="profileImg"
               />
-              <div className="hidden lgl:inline-block absolute w-full h-80 bg-textGreen/20 rounded-md top-0 left-0 group-hover:bg-transparent duration-300"></div>
+              <div className="hidden lgl:inline-block absolute w-full h-84 bg-textGreen/20 rounded-md top-0 left-0 group-hover:bg-transparent duration-300"></div>
             </div>
 
-            <div className="hidden absolute left-6 top-6 lgl:inline-flex w-full h-80 border-2 border-textGreen rounded-md group-hover:-translate-x-2 group-hover:-translate-y-2 transition-transform duration-300"></div>
+            <div className="hidden absolute left-6 top-6 lgl:inline-flex w-full h-full border-2 border-textGreen rounded-md group-hover:-translate-x-2 group-hover:-translate-y-2 transition-transform duration-300"></div>
           </div>
         </div>
       </div>

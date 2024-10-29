@@ -2,7 +2,17 @@ import React from "react";
 import SectionTitle from "./SectionTitle";
 import Link from "next/link";
 import Image from "next/image";
-import { covid, femgpt, femgram, nativshark, sprintzero, sumzy } from "../public/assets";
+import {
+  covid,
+  femgpt,
+  femgram,
+  interviewsim,
+  medfinder,
+  nativshark,
+  sprintzero,
+  sumzy,
+  tcmp,
+} from "../public/assets";
 
 const Projects = () => {
   return (
@@ -10,17 +20,17 @@ const Projects = () => {
       <SectionTitle title="Some Things I have Built" />
 
       <div className="flex flex-col gap-14">
-        <div className="w-full flex flex-col xl:flex-row items-center justify-center gap-28 lgl:gap-0 mt-10">
+        <div className="w-full flex flex-col xl:flex-row items-center justify-center gap-12 lgl:gap-0 mt-10">
           <Link
             className="w-full xl:w-1/2 h-auto relative group"
-            href="https://femgpt.vercel.app/"
+            href="http://interviewsim.vercel.app/"
             target="_blank"
           >
             <div>
               <Image
                 className="w-[full] h-full object-contain"
-                src={femgpt}
-                alt="femgpt"
+                src={interviewsim}
+                alt="interviewsim"
               />
             </div>
           </Link>
@@ -29,25 +39,38 @@ const Projects = () => {
             {/* <p className="font-titleFont text-textGreen text-sm tracking-wide">
             Featured Project
           </p> */}
-            <h3 className="text-2xl font-bold">FemGPT</h3>
+            <Link
+              href="http://interviewsim.vercel.app/"
+              target="_blank"
+              className="text-2xl font-bold"
+            >
+              InterviewSim
+            </Link>
             <p className="bg-gray-200 dark:bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
-              FemGPT is an advanced ChatGPT clone app built with JavaScript,
-              Node.js, HTML, and CSS. It offers a seamless interface for
-              engaging in intelligent and dynamic conversations. With its
-              powerful natural language processing capabilities, FemGPT allows
-              users to ask questions, seek recommendations, and have meaningful
-              discussions.
+              InterviewSim is an innovative, AI-driven platform designed to
+              revolutionize the interview preparation process. Leveraging
+              cutting-edge natural language processing and machine learning
+              algorithms, InterviewSim simulates real-world job interviews,
+              providing users with personalized practice sessions, expert
+              feedback, and actionable insights to improve their responses.
+              Built utilizing advanced AI technology, InterviewSim&apos;s
+              adaptive learning system continuously learns and refines its
+              questioning and feedback mechanisms, ensuring users receive the
+              most effective and relevant preparation for acing their next
+              interview.
             </p>
             <ul className="text-xs md:text-sm font-titleFont tracking-wide flex gap-2 md:gap-5 justify-between text-textDark">
-              <li>Javascript</li>
-              <li>Nodejs</li>
-              <li>HTML & CSS</li>
-              <li>OpenAI</li>
+              <li>Next.js</li>
+              <li>React</li>
+              <li>Node.js</li>
+              <li>Typescript</li>
+              <li>Postgres</li>
+              <li>Supabase</li>
             </ul>
           </div>
         </div>
 
-        <div className="w-full flex flex-col xl:flex-row-reverse items-center justify-center gap-28 lgl:gap-0 mt-10">
+        <div className="w-full flex flex-col xl:flex-row-reverse items-center justify-center gap-12 lgl:gap-0 mt-10">
           <Link
             className="w-full xl:w-1/2 h-auto relative group"
             href="https://nativshark.com"
@@ -63,7 +86,13 @@ const Projects = () => {
           </Link>
 
           <div className="w-full xl:w-1/2 flex flex-col gap-6 lgl:justify-between items-start text-right xl:-mr-16 z-10">
-            <h3 className="text-2xl font-bold">Nativshark</h3>
+            <Link
+              href="https://nativshark.com"
+              target="_blank"
+              className="text-2xl font-bold"
+            >
+              Nativshark
+            </Link>
             <p className="bg-gray-200 dark:bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
               NativShark is a revolutionary language learning platform that
               leverages artificial intelligence and immersive techniques to
@@ -82,7 +111,95 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="w-full flex flex-col xl:flex-row items-center justify-center gap-28 lgl:gap-0 mt-10">
+        <div className="w-full flex flex-col xl:flex-row items-center justify-center gap-12 lgl:gap-0 mt-10">
+          <Link
+            className="w-full xl:w-1/2 h-auto relative group"
+            href="https://medfinder.vercel.app/"
+            target="_blank"
+          >
+            <div>
+              <Image
+                className="w-[full] h-full object-contain"
+                src={medfinder}
+                alt="medfinder"
+              />
+            </div>
+          </Link>
+
+          <div className="w-full xl:w-1/2 flex flex-col gap-6 lgl:justify-between items-end text-right xl:-ml-16 z-10">
+            <Link
+              href="https://medfinder.vercel.app/"
+              target="_blank"
+              className="text-2xl font-bold"
+            >
+              Medfinder
+            </Link>
+            <p className="bg-gray-200 dark:bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
+              MedFinder is an innovative location-based platform streamlining
+              healthcare access by connecting users with nearby medical
+              facilities, pharmacies, and healthcare services. Leveraging
+              advanced mapping technology and a comprehensive database,
+              MedFinder enables effortless searching, location, and navigation
+              to providers, saving time and stress in urgent situations. Built
+              with cutting-edge web technologies, MedFinder&apos;s intuitive
+              interface and precise geolocation ensure a seamless experience,
+              providing proximity-based search, detailed provider information,
+              turn-by-turn directions, and specialized care filters, ultimately
+              enhancing healthcare accessibility and efficiency.
+            </p>
+            <ul className="text-xs md:text-sm font-titleFont tracking-wide flex gap-2 md:gap-5 justify-between text-textDark">
+              <li>Nextjs</li>
+              <li>Typescript</li>
+              <li>React</li>
+              <li>TailwindCSS</li>
+              <li>Firebase</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="w-full flex flex-col xl:flex-row-reverse items-center justify-center gap-12 lgl:gap-0 mt-10">
+          <Link
+            className="w-full xl:w-1/2 h-auto relative group"
+            href="https://oautcmp.com"
+            target="_blank"
+          >
+            <div>
+              <Image
+                className="w-[full] h-full object-contain"
+                src={tcmp}
+                alt="tcmp"
+              />
+            </div>
+          </Link>
+
+          <div className="w-full xl:w-1/2 flex flex-col gap-6 lgl:justify-between items-start text-right xl:-mr-16 z-10">
+            <Link
+              href="https://oautcmp.com"
+              target="_blank"
+              className="text-2xl font-bold"
+            >
+              TCMP
+            </Link>
+            <p className="bg-gray-200 dark:bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
+              TCMP is a pioneering telemedicine platform bridging the healthcare
+              gap in rural areas. By connecting patients with licensed
+              healthcare professionals through secure, remote consultations,
+              TCMP enhances access to quality medical care, regardless of
+              geographical constraints. With a focus on underserved communities,
+              TCMP improves health outcomes, reduces disparities, and empowers
+              rural populations to manage their well-being.
+            </p>
+            <ul className="text-xs md:text-sm font-titleFont tracking-wide flex gap-2 md:gap-5 justify-between text-textDark">
+              <li>Vue</li>
+              <li>Typescript</li>
+              <li>Nodejs</li>
+              <li>Tailwindcss</li>
+              <li>Postgres</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="w-full flex flex-col xl:flex-row items-center justify-center gap-12 lgl:gap-0 mt-10">
           <Link
             className="w-full xl:w-1/2 h-auto relative group"
             href="https://sumzy.netlify.app/"
@@ -101,7 +218,13 @@ const Projects = () => {
             {/* <p className="font-titleFont text-textGreen text-sm tracking-wide">
             Featured Project
           </p> */}
-            <h3 className="text-2xl font-bold">Sumzy</h3>
+            <Link
+              href="https://sumzy.netlify.app/"
+              target="_blank"
+              className="text-2xl font-bold"
+            >
+              Sumzy
+            </Link>
             <p className="bg-gray-200 dark:bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
               Sumzy is an open-source article summarizer that simplifies your
               reading experience by transforming lengthy articles into clear and
@@ -117,7 +240,7 @@ const Projects = () => {
           </div>
         </div>
 
-        <div className="w-full flex flex-col xl:flex-row-reverse items-center justify-center gap-28 lgl:gap-0 mt-10">
+        <div className="w-full flex flex-col xl:flex-row-reverse items-center justify-center gap-12 lgl:gap-0 mt-10">
           <Link
             className="w-full xl:w-1/2 h-auto relative group"
             href="https://covid-19-tracker-2257e.web.app/"
@@ -133,7 +256,13 @@ const Projects = () => {
           </Link>
 
           <div className="w-full xl:w-1/2 flex flex-col gap-6 lgl:justify-between items-start text-right xl:-mr-16 z-10">
-            <h3 className="text-2xl font-bold">Covid 19 Tracker</h3>
+            <Link
+              href="https://covid-19-tracker-2257e.web.app/"
+              target="_blank"
+              className="text-2xl font-bold"
+            >
+              Covid 19 Tracker
+            </Link>
             <p className="bg-gray-200 dark:bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
               Covid19-tracker is a comprehensive and user-friendly app designed
               to track and display up-to-date Covid-19 data from around the
@@ -146,42 +275,6 @@ const Projects = () => {
               <li>Firebase</li>
               <li>Leaflet</li>
               <li>Chartjs</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="w-full flex flex-col xl:flex-row items-center justify-center gap-28 lgl:gap-0 mt-10">
-          <Link
-            className="w-full xl:w-1/2 h-auto relative group"
-            href="https://femgram-37983.web.app/"
-            target="_blank"
-          >
-            <div>
-              <Image
-                className="w-[full] h-full object-contain"
-                src={femgram}
-                alt="femgram"
-              />
-            </div>
-          </Link>
-
-          <div className="w-full xl:w-1/2 flex flex-col gap-6 lgl:justify-between items-end text-right xl:-ml-16 z-10">
-            {/* <p className="font-titleFont text-textGreen text-sm tracking-wide">
-            Featured Project
-          </p> */}
-            <h3 className="text-2xl font-bold">Femgram</h3>
-            <p className="bg-gray-200 dark:bg-[#112240] text-left text-sm md:text-base p-2 md:p-6 rounded-md">
-              Femgram is a stylish photo gallery web app powered by React,
-              Firebase, and Framer Motion. It provides a seamless user
-              experience for browsing and showcasing photos. With its minimalist
-              design, secure cloud storage, and elegant animations, Femgram
-              offers a visually appealing way to explore stunning photographs on
-              any device.
-            </p>
-            <ul className="text-xs md:text-sm font-titleFont tracking-wide flex gap-2 md:gap-5 justify-between text-textDark">
-              <li>React</li>
-              <li>Framer Motion</li>
-              <li>Firebase</li>
             </ul>
           </div>
         </div>
