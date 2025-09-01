@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { AiFillThunderbolt } from "react-icons/ai";
 import { TiArrowForward } from "react-icons/ti";
 
-const RpInc = () => {
+const Joyfill = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -12,27 +12,27 @@ const RpInc = () => {
       <h3 className="flex gap-1 font-medium text-xl font-titleFont">
         Software Engineer{" "}
         <span className="text-textDark dark:text-textGreen tracking-wide">
-          @RP Inc.
+          @Joyfill
         </span>
       </h3>
       <p className="text-sm mt-1 font-medium text-textDark">
-        Oct 2021 - Nov 2024
+        Nov 2024 - Present
       </p>
       <ul className="mt-6 flex flex-col gap-3">
         <li className="text-base flex items-center gap-2 text-textDark">
           <span className="text-textDark dark:text-textGreen">
             <TiArrowForward />
           </span>
-          Spearheaded the design and development of the SprintZero app,
-          employing best software engineering practices.
+          Played a key role in developing the core engine and tools in the
+          Joyfill SDK.
         </li>
         <li className="text-base flex items-center gap-2 text-textDark">
           <span className="text-textDark dark:text-textGreen">
             <TiArrowForward />
           </span>
-          Conducted in-depth research on cloud technologies to identify optimal
-          solutions that would enhance the functionality and performance of the
-          SprintZero app.
+          Conducted in-depth research on several technologies to identify
+          optimal solutions that would enhance the functionality and performance
+          of the Joyfill SDK.
         </li>
         <li className="text-base flex items-center gap-2 text-textDark">
           <span className="text-textDark dark:text-textGreen">
@@ -41,16 +41,9 @@ const RpInc = () => {
           Collaborated closely with the project management team to contribute to
           strategic planning and ensure project milestones were achieved.
         </li>
-        <li className="text-base flex items-center gap-2 text-textDark">
-          <span className="text-textDark dark:text-textGreen">
-            <TiArrowForward />
-          </span>
-          Demonstrated meticulousness in documenting codes and technologies,
-          enabling seamless knowledge transfer and efficient maintenance.
-        </li>
       </ul>
     </motion.div>
   );
 };
 
-export default RpInc;
+export default Joyfill;

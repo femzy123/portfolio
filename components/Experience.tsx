@@ -5,13 +5,24 @@ import Nativshark from "./works/Nativshark";
 import Ansa from "./works/Ansa";
 import Enovait from "./works/Enovait";
 import Lopwork from "./works/Lopwork";
+import Joyfill from "./works/Joyfill";
 
 const Experience = () => {
-  const [rpinc, setRpinc] = useState(true)
+  const [rpinc, setRpinc] = useState(false)
   const [nativshark, setNativshark] = useState(false)
   const [lopwork, setLopwork] = useState(false)
   const [enovait, setEnovait] = useState(false)
   const [ansa, setAnsa] = useState(false)
+  const [joyfill, setJoyfill] = useState(true)
+
+  const selectJoyfill = () => {
+    setRpinc(false)
+    setNativshark(false)
+    setLopwork(false)
+    setEnovait(false)
+    setAnsa(false);
+    setJoyfill(true);
+  }
 
   const selectRP = () => {
     setRpinc(true)
@@ -19,6 +30,7 @@ const Experience = () => {
     setLopwork(false)
     setEnovait(false)
     setAnsa(false);
+    setJoyfill(false);
   }
 
   const selectNativshark = () => {
@@ -27,6 +39,7 @@ const Experience = () => {
     setLopwork(false);
     setEnovait(false);
     setAnsa(false);
+    setJoyfill(false);
   };
 
   const selectLopworks = () => {
@@ -35,6 +48,7 @@ const Experience = () => {
     setLopwork(true);
     setEnovait(false);
     setAnsa(false);
+    setJoyfill(false);
   };
 
   const selectEnovait = () => {
@@ -43,6 +57,7 @@ const Experience = () => {
     setLopwork(false);
     setEnovait(true);
     setAnsa(false);
+    setJoyfill(false);
   };
 
   const selectAnsa = () => {
@@ -50,7 +65,8 @@ const Experience = () => {
     setNativshark(false);
     setLopwork(false);
     setEnovait(false);
-    setAnsa(true)
+    setAnsa(true);
+    setJoyfill(false);
   };
 
   return (
@@ -62,6 +78,14 @@ const Experience = () => {
 
       <div className="w-full mt-10 flex flex-col md:flex-row gap-16">
         <ul className="md:w-32 flex flex-col">
+          <li
+            onClick={selectJoyfill}
+            className={`border-l-2 ${
+              joyfill ? "border-l-textGreen" : "border-l-hoverColor"
+            } text-textDark bg-transparent hover:bg-[#112240] py-3 text-sm cursor-pointer duration-300 px-8 font-medium`}
+          >
+            Joyfill
+          </li>
           <li
             onClick={selectRP}
             className={`border-l-2 ${
@@ -103,6 +127,7 @@ const Experience = () => {
             ANSA
           </li>
         </ul>
+        {joyfill && <Joyfill />}
         {rpinc && <RpInc />}
         {nativshark && <Nativshark />}
         {lopwork && <Lopwork />}
