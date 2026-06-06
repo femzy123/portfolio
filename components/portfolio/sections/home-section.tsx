@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Download, FileCode2, Terminal, Users } from "lucide-react";
+import { ArrowRight, Download, FileCode2, Users } from "lucide-react";
 
 import { Button, buttonVariants } from "@/components/ui/button";
 import { availability, profile } from "@/lib/portfolio-data";
@@ -9,35 +9,108 @@ type HomeSectionProps = {
   onViewProjects?: () => void;
 };
 
+const skillPills = [
+  {
+    label: "React",
+    className:
+      "border-cyan-400/25 bg-cyan-300/10 text-cyan-800 dark:text-cyan-100",
+  },
+  {
+    label: "TypeScript",
+    className:
+      "border-blue-400/25 bg-blue-400/10 text-blue-800 dark:text-blue-100",
+  },
+  {
+    label: "Next.js",
+    className:
+      "border-slate-500/25 bg-slate-500/10 text-slate-800 dark:text-slate-100",
+  },
+  {
+    label: "Node.js",
+    className:
+      "border-emerald-400/25 bg-emerald-400/10 text-emerald-800 dark:text-emerald-100",
+  },
+  {
+    label: "AWS",
+    className:
+      "border-amber-400/30 bg-amber-400/10 text-amber-800 dark:text-amber-100",
+  },
+  {
+    label: "PostgreSQL",
+    className: "border-sky-400/25 bg-sky-400/10 text-sky-800 dark:text-sky-100",
+  },
+  {
+    label: "MongoDB",
+    className:
+      "border-green-400/25 bg-green-400/10 text-green-800 dark:text-green-100",
+  },
+  {
+    label: "OpenAI",
+    className:
+      "border-violet-400/25 bg-violet-400/10 text-violet-800 dark:text-violet-100",
+  },
+  {
+    label: "SDKs",
+    className:
+      "border-rose-400/25 bg-rose-400/10 text-rose-800 dark:text-rose-100",
+  },
+];
+
 export function HomeSection({ onViewProjects }: HomeSectionProps) {
   return (
-    <section id="home" className="portfolio-section">
-      <div className="grid min-h-[62vh] items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="flex flex-col gap-8">
-          <div className="flex items-center gap-4">
-            <span className="h-px w-14 bg-cyan-500" />
-            <p className="font-mono text-xs uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">
-              {profile.title}
-            </p>
+    <section id="home" className="portfolio-section lg:h-full">
+      <div className="relative flex min-h-[66vh] items-center justify-center overflow-hidden px-1 py-6 text-center lg:h-full lg:min-h-0 lg:py-0">
+        <div className="pointer-events-none absolute left-1/2 top-[12%] h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-300/18 blur-3xl dark:bg-cyan-300/16" />
+
+        <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center">
+          <div className="relative mb-7">
+            <div className="absolute -inset-5 rounded-full bg-cyan-300/22 blur-2xl dark:bg-cyan-300/18" />
+            <div className="absolute -inset-3 rounded-full border border-cyan-300/20 shadow-[0_0_44px_rgba(34,211,238,0.28)]" />
+            <div className="relative size-32 overflow-hidden rounded-full border border-cyan-200/30 bg-slate-950 p-1.5 shadow-[0_24px_80px_rgba(15,23,42,0.26),0_0_58px_rgba(34,211,238,0.22)] md:size-40">
+              <Image
+                src="/assets/hero-abstract.png"
+                alt="Abstract engineering identity visual"
+                width={1024}
+                height={1024}
+                priority
+                className="size-full rounded-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-cyan-200/20 bg-slate-950/92 px-4 py-2 font-mono text-[0.68rem] uppercase tracking-[0.2em] text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,0.24)]">
+              <span className="size-1.5 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.9)]" />
+              {availability.status}
+            </div>
           </div>
 
-          <div className="flex flex-col gap-5">
-            <h1 className="max-w-3xl text-balance text-5xl font-semibold leading-[0.98] text-foreground md:text-7xl">
-              Hi, I&apos;m Obafemi
-            </h1>
-            <p className="max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
-              {profile.intro}
+          <div className="mb-4 flex items-center gap-4">
+            <span className="h-px w-10 bg-cyan-500/80" />
+            <p className="font-mono text-xs uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">
+              Senior {profile.title}
             </p>
-            <p className="max-w-xl text-sm leading-7 text-muted-foreground">
+            <span className="h-px w-10 bg-cyan-500/80" />
+          </div>
+
+          <div className="flex flex-col items-center gap-4">
+            <h1 className="max-w-4xl text-balance text-5xl font-semibold leading-[0.95] text-foreground md:text-7xl">
+              Hi, I&apos;m{" "}
+              <span className="bg-gradient-to-r from-cyan-500 via-sky-400 to-cyan-200 bg-clip-text text-transparent drop-shadow-[0_0_26px_rgba(34,211,238,0.28)]">
+                Obafemi
+              </span>
+            </h1>
+            <p className="max-w-3xl text-balance text-xl font-medium leading-8 text-cyan-800 dark:text-cyan-100 md:text-2xl">
+              I build reliable product systems from ambiguous ideas, evolving
+              requirements, and real-world constraints.
+            </p>
+            <p className="max-w-2xl text-pretty text-sm leading-7 text-muted-foreground md:text-base">
               {profile.support}
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
             <Button
               type="button"
               onClick={onViewProjects}
-              className="h-12 rounded-full bg-cyan-300 px-6 text-sm font-semibold text-slate-950 shadow-[0_0_34px_rgba(34,211,238,0.45)] transition hover:bg-cyan-200"
+              className="h-12 rounded-full bg-cyan-300 px-7 text-sm font-semibold text-slate-950 shadow-[0_0_38px_rgba(34,211,238,0.48)] transition hover:bg-cyan-200"
             >
               View Projects
               <ArrowRight data-icon="inline-end" />
@@ -82,40 +155,15 @@ export function HomeSection({ onViewProjects }: HomeSectionProps) {
             </Link>
           </div>
 
-          <div className="flex flex-wrap gap-2 pt-2 font-mono text-xs text-muted-foreground">
-            <span className="rounded-full border border-cyan-400/15 bg-cyan-300/8 px-4 py-2 text-cyan-700 dark:text-cyan-100">
-              React
-            </span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
-              TypeScript
-            </span>
-            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2">
-              AI Systems
-            </span>
-          </div>
-        </div>
-
-        <div className="relative mx-auto w-full max-w-[34rem]">
-          <div className="absolute -inset-8 rounded-[3rem] bg-cyan-300/12 blur-3xl" />
-          <div className="relative rounded-[2.4rem] border border-white/10 bg-slate-950/80 p-3 shadow-[0_35px_95px_rgba(0,0,0,0.35)]">
-            <Image
-              src="/assets/hero-abstract.png"
-              alt="Abstract engineering portrait visual"
-              width={1024}
-              height={1024}
-              priority
-              className="aspect-square rounded-[2rem] object-cover"
-            />
-            <div className="absolute -bottom-5 right-6 rounded-2xl border border-cyan-200/20 bg-slate-950/90 px-5 py-3 font-mono text-xs uppercase tracking-[0.24em] text-cyan-100 shadow-[0_0_30px_rgba(34,211,238,0.25)]">
-              <span className="mr-2 inline-block size-2 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.8)]" />
-              Status: {availability.status}
-            </div>
-          </div>
-
-          <div className="absolute -left-4 top-10 hidden rounded-2xl border border-white/10 bg-slate-950/80 p-4 text-cyan-100 shadow-2xl backdrop-blur md:block">
-            <Terminal aria-hidden="true" className="mb-2 size-4" />
-            <p className="font-mono text-xs">systems.identity()</p>
-            <p className="mt-2 text-sm text-slate-300">{profile.location}</p>
+          <div className="mt-6 flex max-w-3xl flex-wrap justify-center gap-2 font-mono text-[0.68rem] uppercase tracking-[0.12em]">
+            {skillPills.map((skill) => (
+              <span
+                key={skill.label}
+                className={`rounded-full border px-3 py-1.5 ${skill.className}`}
+              >
+                {skill.label}
+              </span>
+            ))}
           </div>
         </div>
       </div>

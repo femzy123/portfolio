@@ -8,7 +8,6 @@ import type { SectionId } from "@/lib/portfolio-data";
 import { navItems, profile } from "@/lib/portfolio-data";
 import { FloatingNav, MobileNav } from "./floating-nav";
 import { getRandomQuote, MainCanvas } from "./main-canvas";
-import { ThemeToggle } from "./theme-toggle";
 
 export function PortfolioShell() {
   const [activeSection, setActiveSection] = React.useState<SectionId>("home");
@@ -19,6 +18,25 @@ export function PortfolioShell() {
   const [quote, setQuote] = React.useState(getRandomQuote);
 
   React.useEffect(() => {
+    const applyHashSection = () => {
+      const hash = window.location.hash.replace("#", "");
+      const target = navItems.find((item) => item.id === hash)?.id;
+
+      if (target) {
+        setActiveSection(target);
+      }
+    };
+
+    applyHashSection();
+    window.addEventListener("hashchange", applyHashSection);
+
+    return () => window.removeEventListener("hashchange", applyHashSection);
+  }, []);
+
+  React.useEffect(() => {
+    const mobile = window.matchMedia("(max-width: 1023px)");
+    if (!mobile.matches) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
@@ -73,7 +91,11 @@ export function PortfolioShell() {
   const showChrome = activeSection !== "home";
 
   return (
-    <div className="portfolio-stage min-h-dvh overflow-x-hidden px-4 py-5 text-foreground md:px-8 lg:flex lg:h-dvh lg:flex-col lg:px-[clamp(2rem,7vw,7rem)] lg:pb-5 lg:pt-4">
+    <div
+      className={`portfolio-stage min-h-dvh overflow-x-hidden px-4 py-5 text-foreground md:px-8 lg:flex lg:h-dvh lg:flex-col lg:px-[clamp(2rem,7vw,7rem)] ${
+        showChrome ? "lg:pb-5 lg:pt-4" : "lg:overflow-hidden lg:py-0"
+      }`}
+    >
       <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_75%_8%,rgba(103,232,249,0.16),transparent_29%),radial-gradient(circle_at_8%_82%,rgba(29,78,216,0.14),transparent_32%)]" />
 
       {showChrome ? (
@@ -89,16 +111,13 @@ export function PortfolioShell() {
             {profile.brand}
           </Link>
 
-          <div className="flex items-center gap-3">
-            <Button
-              type="button"
-              onClick={() => handleSectionChange("contact")}
-              className="hidden h-10 rounded-full bg-cyan-300 px-5 text-sm font-semibold text-slate-950 shadow-[0_0_28px_rgba(34,211,238,0.35)] hover:bg-cyan-200 sm:inline-flex"
-            >
-              Hire Me
-            </Button>
-            <ThemeToggle />
-          </div>
+          <Button
+            type="button"
+            onClick={() => handleSectionChange("contact")}
+            className="hidden h-10 rounded-full bg-cyan-300 px-5 text-sm font-semibold text-slate-950 shadow-[0_0_28px_rgba(34,211,238,0.35)] hover:bg-cyan-200 sm:inline-flex"
+          >
+            Hire Me
+          </Button>
         </header>
       ) : null}
 
@@ -122,8 +141,8 @@ export function PortfolioShell() {
       </div>
 
       {showChrome ? (
-        <footer className="mx-auto mt-auto hidden w-full max-w-7xl shrink-0 border-t border-slate-900/8 py-4 font-mono text-xs text-muted-foreground dark:border-white/10 lg:block">
-          <p>&copy; 2026 {profile.name}. Built with precision.</p>
+        <footer className="pointer-events-none fixed bottom-4 right-[clamp(2rem,7vw,7rem)] z-20 hidden font-mono text-xs text-muted-foreground/80 lg:block">
+          <p>©️{profile.name}</p>
         </footer>
       ) : null}
 

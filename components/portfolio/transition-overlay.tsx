@@ -20,7 +20,7 @@ export function TransitionOverlay({ section, quote }: TransitionOverlayProps) {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.99 }}
       transition={{ duration: 0.18, ease: "easeOut" }}
-      className="absolute inset-0 z-20 flex items-center justify-center bg-card/92 backdrop-blur-xl"
+      className="absolute inset-0 z-20 flex items-center justify-center backdrop-blur-xl"
       aria-live="polite"
       aria-busy="true"
     >

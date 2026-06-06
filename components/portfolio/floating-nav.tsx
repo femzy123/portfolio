@@ -21,7 +21,12 @@ export function FloatingNav({
   return (
     <nav
       aria-label="Portfolio sections"
-      className="fixed left-[clamp(1rem,4vw,5rem)] top-1/2 z-40 hidden -translate-y-1/2 lg:block"
+      className={cn(
+        "fixed top-1/2 z-40 hidden -translate-y-1/2 lg:block",
+        activeSection === "home"
+          ? "left-[clamp(1rem,4vw,5rem)]"
+          : "portfolio-floating-nav",
+      )}
     >
       <div className="flex flex-col items-center gap-3 rounded-full border border-white/10 bg-slate-700/45 p-3 text-slate-300 shadow-[0_28px_90px_rgba(3,10,21,0.58),0_12px_34px_rgba(15,23,42,0.28),0_0_42px_rgba(103,232,249,0.13)] backdrop-blur-xl dark:bg-slate-700/45">
         {navItems.map((item) => {

@@ -22,7 +22,7 @@ export function ProjectsSection() {
         />
 
         <div className="grid gap-5 xl:grid-cols-3">
-          {featured.map((project, index) => (
+          {featured.map((project) => (
             <Card
               key={project.title}
               className="group overflow-hidden rounded-[1.7rem] border-slate-900/8 bg-white/64 shadow-[0_20px_70px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:shadow-[0_28px_90px_rgba(34,211,238,0.12)] dark:border-white/10 dark:bg-white/[0.045]"
@@ -31,10 +31,7 @@ export function ProjectsSection() {
                 <ProjectVisual kind={project.visual} />
                 <div className="flex flex-1 flex-col gap-4 p-2">
                   <div>
-                    <p className="font-mono text-xs uppercase tracking-[0.18em] text-cyan-700 dark:text-cyan-200">
-                      Featured 0{index + 1}
-                    </p>
-                    <h3 className="mt-2 text-2xl font-semibold">{project.title}</h3>
+                    <h3 className="text-2xl font-semibold">{project.title}</h3>
                   </div>
                   <p className="text-sm leading-7 text-muted-foreground">
                     {project.description}

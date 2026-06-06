@@ -175,114 +175,202 @@
   }
 
   .portfolio-canvas {
-    width: min(84vw, 88rem);
+    width: min(calc(100vw - 18rem), 78rem);
     height: min(82vh, 52rem);
+  }
+
+  .portfolio-floating-nav {
+    left: max(
+      2rem,
+      calc((100vw - min(calc(100vw - 18rem), 78rem)) / 2 - 7.25rem)
+    );
   }
 
   .portfolio-section {
     min-height: min(68vh, 44rem);
   }
 
-  .systems-core {
+  .skills-ecosystem-section {
+    height: 100%;
+    min-height: 100%;
+  }
+
+  .skills-ecosystem-stage {
     position: relative;
     display: flex;
-    width: 10.5rem;
-    height: 10.5rem;
+    min-height: min(72vh, 44rem);
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.35rem;
-    border-radius: 999px;
-    border: 1px solid oklch(0.82 0.14 216 / 34%);
-    background:
-      radial-gradient(
-        circle at 50% 42%,
-        oklch(0.82 0.14 216 / 0.22),
-        transparent 46%
-      ),
-      oklch(0.22 0.024 235 / 0.92);
-    color: oklch(0.9 0.09 210);
-    box-shadow:
-      0 0 0 1px oklch(0.82 0.14 216 / 12%),
-      0 0 42px oklch(0.78 0.14 216 / 45%),
-      0 24px 70px oklch(0.1 0.02 235 / 45%);
-    animation: core-pulse 3.8s ease-in-out infinite;
-  }
-
-  .systems-core span {
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  .systems-core small {
-    font-family: var(--font-geist-mono);
-    font-size: 0.68rem;
-    color: oklch(0.78 0.04 226);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-  }
-
-  .skill-line {
-    position: absolute;
-    display: block;
-    width: 32%;
-    height: 1px;
     overflow: hidden;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      oklch(0.82 0.14 216 / 32%),
-      transparent
-    );
-    transform-origin: center;
   }
 
-  .skill-line::after {
-    content: "";
+  .ecosystem-map {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.85rem;
+    padding-top: 0.5rem;
+  }
+
+  .ecosystem-lines {
+    pointer-events: none;
     position: absolute;
-    inset-block: 0;
-    width: 28%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      oklch(0.88 0.12 210 / 88%),
-      transparent
-    );
-    animation: data-send 2.8s ease-in-out infinite;
+    inset: 0;
+    z-index: 8;
+    display: none;
+    overflow: visible;
+  }
+
+  .ecosystem-line {
+    stroke: oklch(0.88 0.16 214 / 76%);
+    stroke-linecap: round;
+    stroke-width: 0.34;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .ecosystem-line-glow {
+    stroke: oklch(0.82 0.14 216 / 38%);
+    stroke-linecap: round;
+    stroke-width: 1.25;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .ecosystem-data-packet {
+    fill: oklch(0.88 0.12 210 / 92%);
+    filter: drop-shadow(0 0 8px oklch(0.82 0.14 216 / 80%));
+  }
+
+  .ecosystem-brain-icon {
+    position: relative;
+    z-index: 20;
+    order: 0;
+    margin-inline: auto;
+    width: 9rem;
+    height: 9rem;
+    color: oklch(0.86 0.14 213);
+    animation: ecosystem-brain-pulse 3.1s ease-in-out infinite;
+    scale: 1;
+  }
+
+  .ecosystem-card {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    border-radius: 1.15rem;
+    border: 1px solid oklch(0.18 0.026 235 / 10%);
+    background: oklch(1 0 0 / 62%);
+    padding: 0.95rem;
+    box-shadow: 0 18px 55px oklch(0.18 0.03 235 / 10%);
+    backdrop-filter: blur(18px);
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      background 180ms ease,
+      translate 180ms ease;
+    translate: var(--card-x, 0) 0;
+    animation: ecosystem-card-float 5.6s ease-in-out infinite;
+    animation-delay: var(--float-delay, 0s);
+  }
+
+  .dark .ecosystem-card {
+    border-color: oklch(0.92 0.012 226 / 11%);
+    background: oklch(0.92 0.012 226 / 5.5%);
+    box-shadow:
+      0 24px 70px oklch(0.1 0.02 235 / 34%),
+      inset 0 1px 0 oklch(1 0 0 / 5%);
+  }
+
+  .ecosystem-card:hover {
+    border-color: oklch(0.82 0.14 216 / 36%);
+    background: oklch(1 0 0 / 72%);
+    box-shadow:
+      0 26px 80px oklch(0.42 0.14 216 / 18%),
+      0 0 34px oklch(0.82 0.14 216 / 18%);
+    translate: var(--card-x, 0) -7px;
+    animation-play-state: paused;
+  }
+
+  .dark .ecosystem-card:hover {
+    background: oklch(0.92 0.012 226 / 7.5%);
+  }
+
+  @media (min-width: 1024px) {
+    .skills-ecosystem-stage {
+      height: 100%;
+      min-height: 0;
+    }
+
+    .ecosystem-map {
+      display: block;
+      height: 100%;
+      padding-top: 0;
+    }
+
+    .ecosystem-lines {
+      display: block;
+    }
+
+    .ecosystem-brain-icon {
+      position: absolute;
+      left: 50%;
+      top: 43%;
+      width: clamp(8.75rem, 12vw, 10.75rem);
+      height: clamp(8.75rem, 12vw, 10.75rem);
+      translate: -50% -50%;
+    }
+
+    .ecosystem-card {
+      width: clamp(12rem, 17vw, 14.5rem);
+      padding: 1rem;
+    }
+
+    .ecosystem-card-front {
+      left: 11%;
+      top: 14%;
+    }
+
+    .ecosystem-card-back {
+      right: 11%;
+      top: 14%;
+    }
+
+    .ecosystem-card-cloud {
+      left: 10.5%;
+      top: 54%;
+    }
+
+    .ecosystem-card-data {
+      right: 10.5%;
+      top: 54%;
+    }
+
+    .ecosystem-card-ai {
+      --card-x: -50%;
+      left: 50%;
+      top: 67%;
+    }
   }
 }
 
-@keyframes core-pulse {
+@keyframes ecosystem-brain-pulse {
   0%,
   100% {
-    transform: scale(1);
-    box-shadow:
-      0 0 0 1px oklch(0.82 0.14 216 / 12%),
-      0 0 38px oklch(0.78 0.14 216 / 35%),
-      0 24px 70px oklch(0.1 0.02 235 / 45%);
+    scale: 1;
+    opacity: 0.94;
   }
-  50% {
-    transform: scale(1.025);
-    box-shadow:
-      0 0 0 1px oklch(0.82 0.14 216 / 18%),
-      0 0 58px oklch(0.78 0.14 216 / 55%),
-      0 24px 70px oklch(0.1 0.02 235 / 45%);
+  48% {
+    scale: 1.045;
+    opacity: 1;
   }
 }
 
-@keyframes data-send {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  18%,
-  70% {
-    opacity: 1;
-  }
+@keyframes ecosystem-card-float {
+  0%,
   100% {
-    transform: translateX(360%);
-    opacity: 0;
+    translate: var(--card-x, 0) 0;
+  }
+  50% {
+    translate: var(--card-x, 0) -5px;
   }
 }
 
@@ -294,5 +382,18 @@
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .ecosystem-card,
+  .ecosystem-card:hover {
+    translate: var(--card-x, 0) 0;
+  }
+
+  .ecosystem-brain-icon {
+    scale: 1;
+  }
+
+  .ecosystem-data-packet {
+    display: none;
   }
 }

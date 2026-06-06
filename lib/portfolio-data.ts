@@ -37,7 +37,6 @@ export type NavItem = {
 export const navItems: NavItem[] = [
   { id: "home", label: "Home", icon: Home },
   { id: "experience", label: "Experience", icon: BriefcaseBusiness },
-  { id: "skills", label: "Skills", icon: Zap },
   { id: "projects", label: "Projects", icon: Layers3 },
   { id: "services", label: "Services", icon: Workflow },
   { id: "systems", label: "Systems", icon: Network },
@@ -55,6 +54,10 @@ export const profile = {
   linkedinLabel: "linkedin.com/in/obafemiogunmokun",
   github: "https://github.com/femzy123",
   githubLabel: "github.com/femzy123",
+  discord: "https://discord.com/users/femzy123",
+  discordLabel: "Discord",
+  telegram: "https://t.me/femzy123",
+  telegramLabel: "Telegram",
   resume: "/Obafemi-Ogunmokun-Resume.pdf",
   summary:
     "Software engineer with 6+ years of experience building full-stack products and developer platforms across finance, education, project management, logistics, AI tooling, and consulting.",
@@ -139,7 +142,16 @@ export const experience = [
     role: "Software Developer",
     location: "Nigeria",
     dates: "Sept 2018 to Feb 2020",
-    tech: ["JavaScript", "React", "Vue", "Node.js", "Elixir", "REST", "PHP", "Laravel"],
+    tech: [
+      "JavaScript",
+      "React",
+      "Vue",
+      "Node.js",
+      "Elixir",
+      "REST",
+      "PHP",
+      "Laravel",
+    ],
     summary:
       "Built scalable client applications across frontend, backend, and API integration work.",
     bullets: [
@@ -207,7 +219,15 @@ export const projects = [
     featured: true,
     description:
       "Developer-friendly SDK for adding Pay with USDC to products. Non-custodial payment flow where funds go directly to merchant wallets.",
-    tags: ["Next.js", "TypeScript", "Node.js", "AWS", "PostgreSQL", "Web3", "SDK"],
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "AWS",
+      "PostgreSQL",
+      "Web3",
+      "SDK",
+    ],
     visual: "payments",
   },
   {
@@ -230,7 +250,8 @@ export const projects = [
   },
   {
     title: "MyQuizzy",
-    description: "AI-powered quiz app that turns notes into adaptive practice questions.",
+    description:
+      "AI-powered quiz app that turns notes into adaptive practice questions.",
     url: "https://myquizzy.vercel.app/",
     tags: ["Next.js", "AI", "Education", "TypeScript"],
   },
@@ -255,19 +276,22 @@ export const projects = [
   },
   {
     title: "CryptoWorld",
-    description: "Crypto information app built with React, Ant Design, and Redux Toolkit.",
+    description:
+      "Crypto information app built with React, Ant Design, and Redux Toolkit.",
     url: "https://femzy-cryptoworld.netlify.app/",
     tags: ["React", "Redux Toolkit", "Ant Design"],
   },
   {
     title: "Covid Tracker",
-    description: "COVID-19 tracking app that displays global COVID-related data.",
+    description:
+      "COVID-19 tracking app that displays global COVID-related data.",
     url: "https://covid-19-tracker-2257e.web.app/",
     tags: ["React", "API", "Data Visualization"],
   },
   {
     title: "Femgram",
-    description: "Simple photo gallery built using React, Firebase, and Framer Motion.",
+    description:
+      "Simple photo gallery built using React, Firebase, and Framer Motion.",
     url: "https://femgram-37983.web.app/",
     tags: ["React", "Firebase", "Framer Motion"],
   },
@@ -306,7 +330,14 @@ export const services = [
   },
 ];
 
-export const systemFlow = ["Problem", "Scope", "Prototype", "Ship", "Observe", "Improve"];
+export const systemFlow = [
+  "Problem",
+  "Scope",
+  "Prototype",
+  "Ship",
+  "Observe",
+  "Improve",
+];
 
 export const systemAreas = [
   "Client Applications",
@@ -327,15 +358,30 @@ export const writing = [
 ];
 
 export const socialActions = [
-  { label: "GitHub", href: profile.github, value: "@femzy123", icon: FileCode2 },
+  {
+    label: "GitHub",
+    href: profile.github,
+    value: "@femzy123",
+    icon: FileCode2,
+  },
   {
     label: "LinkedIn",
     href: profile.linkedin,
     value: "/in/obafemiogunmokun",
     icon: Users,
   },
-  { label: "Email", href: `mailto:${profile.email}`, value: profile.email, icon: Mail },
-  { label: "Resume", href: profile.resume, value: "Download PDF", icon: FileText },
+  {
+    label: "Email",
+    href: `mailto:${profile.email}`,
+    value: profile.email,
+    icon: Mail,
+  },
+  {
+    label: "Resume",
+    href: profile.resume,
+    value: "Download PDF",
+    icon: FileText,
+  },
 ];
 
 export const sectionTitles: Record<SectionId, string> = {
@@ -349,9 +395,16 @@ export const sectionTitles: Record<SectionId, string> = {
   contact: "Contact",
 };
 
-export const sectionIcons: Record<SectionId, LucideIcon> = Object.fromEntries(
-  navItems.map((item) => [item.id, item.icon])
-) as Record<SectionId, LucideIcon>;
+export const sectionIcons: Record<SectionId, LucideIcon> = {
+  home: Home,
+  experience: BriefcaseBusiness,
+  skills: Zap,
+  projects: Layers3,
+  services: Workflow,
+  systems: Network,
+  writing: PenLine,
+  contact: Mail,
+};
 
 export const availability = {
   label: "Available for work",

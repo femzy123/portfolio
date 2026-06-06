@@ -17,7 +17,6 @@ import { TransitionOverlay } from "./transition-overlay";
 const orderedSections: SectionId[] = [
   "home",
   "experience",
-  "skills",
   "projects",
   "services",
   "systems",
@@ -70,14 +69,35 @@ export function MainCanvas({
   onSectionChange,
 }: MainCanvasProps) {
   const reduceMotion = useReducedMotion();
+  const isHome = activeSection === "home";
+  const isSkills = activeSection === "skills";
+  const isFullHeightSection = isHome || isSkills;
 
   return (
     <>
-      <main className="portfolio-canvas relative hidden overflow-hidden lg:block">
-        <div className="relative h-full overflow-y-auto px-2 py-8 xl:px-6 xl:py-10">
+      <main
+        className={`relative hidden lg:block ${
+          isHome
+            ? "h-full w-full overflow-visible"
+            : "portfolio-canvas overflow-hidden"
+        }`}
+      >
+        <div
+          data-portfolio-scroll-container={
+            !isHome && !isSkills ? true : undefined
+          }
+          className={
+            isHome
+              ? "relative h-full"
+              : isSkills
+                ? "relative h-full px-2 xl:px-6"
+                : "relative h-full overflow-y-auto px-2 py-8 xl:px-6 xl:py-10"
+          }
+        >
           <AnimatePresence mode="wait">
             <motion.div
               key={activeSection}
+              className={isFullHeightSection ? "h-full" : undefined}
               initial={reduceMotion ? false : { opacity: 0, scale: 1.015 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={
