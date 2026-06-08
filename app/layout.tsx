@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Obafemi Ogunmokun | Senior Software Engineer",
     description:
       "Reliable systems, SDKs, AI products, cloud infrastructure, and product engineering.",
-    url: "https://obafemi.dev",
+    url: "https://obafemi-portfolio.vercel.app/",
     siteName: "Obafemi.dev",
     images: [
       {
