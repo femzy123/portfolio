@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "Obafemi.dev",
     images: [
       {
-        url: "/opengraph-image.png",
+        url: "https://asset.cloudinary.com/femzy123/5fa2cf320b76f4182a7cd419057b43d5",
         width: 1200,
         height: 630,
         alt: "Obafemi Ogunmokun senior software engineer portfolio",
@@ -47,7 +47,9 @@ export const metadata: Metadata = {
     title: "Obafemi Ogunmokun | Senior Software Engineer",
     description:
       "Reliable systems, SDKs, AI products, cloud infrastructure, and product engineering.",
-    images: ["/opengraph-image.png"],
+    images: [
+      "https://asset.cloudinary.com/femzy123/5fa2cf320b76f4182a7cd419057b43d5",
+    ],
   },
 };
 
