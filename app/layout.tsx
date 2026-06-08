@@ -20,6 +20,35 @@ export const metadata: Metadata = {
   description:
     "Premium portfolio for Obafemi Ogunmokun, a software engineer building full-stack products, SDKs, AI tools, and developer platforms.",
   metadataBase: new URL("https://obafemi.dev"),
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
+  openGraph: {
+    title: "Obafemi Ogunmokun | Senior Software Engineer",
+    description:
+      "Reliable systems, SDKs, AI products, cloud infrastructure, and product engineering.",
+    url: "https://obafemi.dev",
+    siteName: "Obafemi.dev",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Obafemi Ogunmokun senior software engineer portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Obafemi Ogunmokun | Senior Software Engineer",
+    description:
+      "Reliable systems, SDKs, AI products, cloud infrastructure, and product engineering.",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({
