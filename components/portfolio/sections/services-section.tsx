@@ -8,7 +8,7 @@ export function ServicesSection() {
       <div className="flex flex-col gap-10">
         <SectionHeader
           title="Services"
-          description="Focused engineering help for teams and founders who need clarity, execution, and durable systems in ambiguous product environments."
+          description="Focused engineering support for teams that need technical clarity, delivery momentum, and systems that can survive real product pressure."
         />
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">

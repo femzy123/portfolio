@@ -75,8 +75,8 @@ export function ContactSection() {
         <div className="mx-auto flex w-full max-w-4xl flex-col items-center gap-9 text-center">
           <SectionHeader
             eyebrow={availability.label}
-            title="Have an ambitious idea?"
-            description="Need someone who can navigate ambiguity, design reliable systems, and turn product ideas into working software?"
+            title="Have a serious product problem?"
+            description="If you need someone who can bring structure to ambiguity, design reliable systems, and ship with craft, I am open to the right conversation."
             align="center"
           />
 

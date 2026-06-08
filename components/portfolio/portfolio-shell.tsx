@@ -6,8 +6,17 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import type { SectionId } from "@/lib/portfolio-data";
 import { navItems, profile } from "@/lib/portfolio-data";
+import { FlowFieldBackground } from "./flow-field-background";
 import { FloatingNav, MobileNav } from "./floating-nav";
 import { getRandomQuote, MainCanvas } from "./main-canvas";
+
+const TRANSITION_DWELL_MS = 3000;
+const TRANSITION_EXIT_MS = 3300;
+
+function retainSectionHash(section: SectionId) {
+  const url = `${window.location.pathname}${window.location.search}#${section}`;
+  window.history.replaceState(null, "", url);
+}
 
 export function PortfolioShell() {
   const [activeSection, setActiveSection] = React.useState<SectionId>("home");
@@ -24,6 +33,9 @@ export function PortfolioShell() {
 
       if (target) {
         setActiveSection(target);
+      } else if (hash) {
+        setActiveSection("home");
+        retainSectionHash("home");
       }
     };
 
@@ -43,8 +55,11 @@ export function PortfolioShell() {
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-        if (visible?.target.id) {
-          setActiveSection(visible.target.id as SectionId);
+        const section = visible?.target.id as SectionId | undefined;
+
+        if (section && navItems.some((item) => item.id === section)) {
+          setActiveSection(section);
+          retainSectionHash(section);
         }
       },
       { rootMargin: "-35% 0px -45% 0px", threshold: [0.18, 0.35, 0.55] },
@@ -67,6 +82,7 @@ export function PortfolioShell() {
           .getElementById(section)
           ?.scrollIntoView({ behavior: "smooth" });
         setActiveSection(section);
+        retainSectionHash(section);
         return;
       }
 
@@ -75,15 +91,16 @@ export function PortfolioShell() {
       setPendingSection(section);
       setQuote(getRandomQuote());
       setIsTransitioning(true);
+      retainSectionHash(section);
 
       window.setTimeout(() => {
         setActiveSection(section);
-      }, 260);
+      }, TRANSITION_DWELL_MS);
 
       window.setTimeout(() => {
         setPendingSection(null);
         setIsTransitioning(false);
-      }, 680);
+      }, TRANSITION_EXIT_MS);
     },
     [activeSection, isTransitioning],
   );
@@ -92,11 +109,12 @@ export function PortfolioShell() {
 
   return (
     <div
-      className={`portfolio-stage min-h-dvh overflow-x-hidden px-4 py-5 text-foreground md:px-8 lg:flex lg:h-dvh lg:flex-col lg:px-[clamp(2rem,7vw,7rem)] ${
+      className={`portfolio-stage relative isolate min-h-dvh overflow-x-hidden px-4 py-5 text-foreground md:px-8 lg:flex lg:h-dvh lg:flex-col lg:px-[clamp(2rem,7vw,7rem)] ${
         showChrome ? "lg:pb-5 lg:pt-4" : "lg:overflow-hidden lg:py-0"
       }`}
     >
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_75%_8%,rgba(103,232,249,0.16),transparent_29%),radial-gradient(circle_at_8%_82%,rgba(29,78,216,0.14),transparent_32%)]" />
+      <FlowFieldBackground activeSection={activeSection} />
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_75%_8%,rgba(103,232,249,0.1),transparent_29%),radial-gradient(circle_at_8%_82%,rgba(29,78,216,0.1),transparent_32%)]" />
 
       {showChrome ? (
         <header className="relative z-30 mx-auto hidden w-full max-w-7xl items-center justify-between py-1 lg:flex lg:shrink-0">
@@ -114,7 +132,7 @@ export function PortfolioShell() {
           <Button
             type="button"
             onClick={() => handleSectionChange("contact")}
-            className="hidden h-10 rounded-full bg-cyan-300 px-5 text-sm font-semibold text-slate-950 shadow-[0_0_28px_rgba(34,211,238,0.35)] hover:bg-cyan-200 sm:inline-flex"
+            className="hidden h-10 cursor-pointer rounded-full bg-cyan-300 px-5 text-sm font-semibold text-slate-950 shadow-[0_0_28px_rgba(34,211,238,0.35)] hover:bg-cyan-200 sm:inline-flex"
           >
             Hire Me
           </Button>
@@ -142,7 +160,7 @@ export function PortfolioShell() {
 
       {showChrome ? (
         <footer className="pointer-events-none fixed bottom-4 right-[clamp(2rem,7vw,7rem)] z-20 hidden font-mono text-xs text-muted-foreground/80 lg:block">
-          <p>©️{profile.name}</p>
+          <p>&copy; {profile.name}</p>
         </footer>
       ) : null}
 

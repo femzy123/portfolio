@@ -180,10 +180,7 @@
   }
 
   .portfolio-floating-nav {
-    left: max(
-      2rem,
-      calc((100vw - min(calc(100vw - 18rem), 78rem)) / 2 - 7.25rem)
-    );
+    left: clamp(1rem, 4vw, 5rem);
   }
 
   .portfolio-section {

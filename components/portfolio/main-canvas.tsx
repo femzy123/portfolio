@@ -20,7 +20,6 @@ const orderedSections: SectionId[] = [
   "projects",
   "services",
   "systems",
-  "writing",
   "contact",
 ];
 
@@ -98,7 +97,7 @@ export function MainCanvas({
             <motion.div
               key={activeSection}
               className={isFullHeightSection ? "h-full" : undefined}
-              initial={reduceMotion ? false : { opacity: 0, scale: 1.015 }}
+              initial={false}
               animate={{ opacity: 1, scale: 1 }}
               exit={
                 reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.985 }

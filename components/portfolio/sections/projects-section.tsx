@@ -18,7 +18,7 @@ export function ProjectsSection() {
       <div className="flex flex-col gap-10">
         <SectionHeader
           title="Selected Works"
-          description="A gallery of digital craftsmanship across developer platforms, AI utilities, education products, logistics, and data-driven interfaces."
+          description="Selected systems, tools, and product experiences that show how I build across platforms, workflows, AI, education, and developer infrastructure."
         />
 
         <div className="grid gap-5 xl:grid-cols-3">

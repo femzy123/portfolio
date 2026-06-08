@@ -11,14 +11,14 @@ type HomeSectionProps = {
 
 const skillPills = [
   {
-    label: "React",
-    className:
-      "border-cyan-400/25 bg-cyan-300/10 text-cyan-800 dark:text-cyan-100",
-  },
-  {
     label: "TypeScript",
     className:
       "border-blue-400/25 bg-blue-400/10 text-blue-800 dark:text-blue-100",
+  },
+  {
+    label: "React",
+    className:
+      "border-cyan-400/25 bg-cyan-300/10 text-cyan-800 dark:text-cyan-100",
   },
   {
     label: "Next.js",
@@ -53,6 +53,21 @@ const skillPills = [
     label: "SDKs",
     className:
       "border-rose-400/25 bg-rose-400/10 text-rose-800 dark:text-rose-100",
+  },
+  {
+    label: "Architecture",
+    className:
+      "border-fuchsia-400/25 bg-fuchsia-400/10 text-fuchsia-800 dark:text-fuchsia-100",
+  },
+  {
+    label: "Performance",
+    className:
+      "border-orange-400/25 bg-orange-400/10 text-orange-800 dark:text-orange-100",
+  },
+  {
+    label: "Developer Experience",
+    className:
+      "border-teal-400/25 bg-teal-400/10 text-teal-800 dark:text-teal-100",
   },
 ];
 
@@ -98,8 +113,7 @@ export function HomeSection({ onViewProjects }: HomeSectionProps) {
               </span>
             </h1>
             <p className="max-w-3xl text-balance text-xl font-medium leading-8 text-cyan-800 dark:text-cyan-100 md:text-2xl">
-              I build reliable product systems from ambiguous ideas, evolving
-              requirements, and real-world constraints.
+              {profile.intro}
             </p>
             <p className="max-w-2xl text-pretty text-sm leading-7 text-muted-foreground md:text-base">
               {profile.support}

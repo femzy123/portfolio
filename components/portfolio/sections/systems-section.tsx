@@ -9,7 +9,7 @@ export function SystemsSection() {
       <div className="flex flex-col gap-10">
         <SectionHeader
           title="How I Think About Systems"
-          description="I enjoy working where product uncertainty meets technical complexity. My process is to reduce ambiguity, ship the smallest useful slice, observe real behavior, and strengthen the system through iteration."
+          description="I work best where product uncertainty meets technical complexity. My process is to create structure, ship the smallest useful slice, observe real behavior, and strengthen the system through iteration."
         />
 
         <div className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
@@ -21,7 +21,7 @@ export function SystemsSection() {
               <div>
                 <h3 className="text-2xl font-semibold">Product to Platform Loop</h3>
                 <p className="text-sm text-muted-foreground">
-                  Spec-driven delivery with room for discovery.
+                  From fuzzy goals to reliable execution.
                 </p>
               </div>
             </div>
@@ -54,7 +54,9 @@ export function SystemsSection() {
               </span>
               <div>
                 <h3 className="text-2xl font-semibold">System Areas</h3>
-                <p className="text-sm text-slate-400">Where I connect the layers.</p>
+                <p className="text-sm text-slate-400">
+                  The layers I connect when turning ideas into working products.
+                </p>
               </div>
             </div>
 
@@ -74,9 +76,9 @@ export function SystemsSection() {
 
         <div className="rounded-[1.8rem] border border-cyan-300/16 bg-cyan-300/8 p-6">
           <p className="max-w-4xl text-lg leading-8 text-foreground">
-            I use spec-driven development to turn fuzzy goals into clear system
-            contracts, then AI-assisted engineering to move faster without
-            skipping review, evaluation, and maintainability.
+            I use spec-driven thinking to turn vague goals into clear system
+            contracts, then use AI-assisted engineering to move faster without
+            skipping review, evaluation, debugging, or maintainability.
           </p>
         </div>
       </div>

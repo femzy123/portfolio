@@ -19,12 +19,12 @@ export function TransitionOverlay({ section, quote }: TransitionOverlayProps) {
       initial={{ opacity: 0, scale: 0.985 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.99 }}
-      transition={{ duration: 0.18, ease: "easeOut" }}
-      className="absolute inset-0 z-20 flex items-center justify-center backdrop-blur-xl"
+      transition={{ duration: 0.24, ease: "easeOut" }}
+      className="absolute inset-0 z-20 flex items-center justify-center backdrop-blur-md"
       aria-live="polite"
       aria-busy="true"
     >
-      <div className="flex flex-col items-center gap-5 text-center">
+      <div className="flex max-w-3xl flex-col items-center gap-7 px-8 text-center">
         <motion.div
           animate={{ rotate: [0, 8, -8, 0], scale: [1, 1.05, 1] }}
           transition={{ duration: 0.9, repeat: Infinity, ease: "easeInOut" }}
@@ -36,7 +36,9 @@ export function TransitionOverlay({ section, quote }: TransitionOverlayProps) {
           <p className="font-mono text-xs uppercase tracking-[0.26em] text-cyan-200">
             Loading {sectionTitles[section]}...
           </p>
-          <p className="max-w-sm text-sm text-muted-foreground">{quote}</p>
+          <q className="block text-balance text-2xl font-semibold leading-snug text-slate-100 drop-shadow-[0_0_22px_rgba(15,23,42,0.86)] md:text-4xl">
+            {quote}
+          </q>
         </div>
       </div>
     </motion.div>

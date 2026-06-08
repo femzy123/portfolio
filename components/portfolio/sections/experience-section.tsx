@@ -4,7 +4,7 @@ import * as React from "react";
 import { MapPin } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { experience } from "@/lib/portfolio-data";
+import { experience, profile } from "@/lib/portfolio-data";
 import { cn } from "@/lib/utils";
 import { SectionHeader, TagList } from "../portfolio-primitives";
 
@@ -122,7 +122,7 @@ export function ExperienceSection() {
       <div className="flex flex-col gap-12">
         <SectionHeader
           title="Experience"
-          description="A narrative of product engineering, technical leadership, and architectural care across SDKs, AI tooling, education, logistics, and consulting."
+          description="A timeline of product engineering ownership, technical leadership, and systems work across SDKs, AI tooling, education, logistics, and consulting."
         />
 
         <div ref={timelineRef} className="relative mx-auto w-full max-w-5xl">
@@ -202,15 +202,15 @@ export function ExperienceSection() {
           <div className="rounded-[1.6rem] border border-slate-900/8 bg-white/60 p-6 dark:border-white/10 dark:bg-white/[0.045]">
             <h3 className="text-2xl font-semibold">Engineering Philosophy</h3>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
-              Code is the medium, but experience is the message. I build systems
-              that do not just work, but feel dependable to the people who use
-              and maintain them.
+              I care about software that makes future decisions easier: clear
+              boundaries, understandable interfaces, observable behavior, and
+              code that can be debugged under pressure.
             </p>
           </div>
           <div className="flex items-center justify-center rounded-[1.6rem] border border-cyan-300/18 bg-cyan-300/8 p-6 text-center">
             <div>
               <p className="text-5xl font-semibold text-cyan-700 dark:text-cyan-100">
-                6+
+                {profile.experienceYears}
               </p>
               <p className="mt-2 font-mono text-[0.65rem] uppercase tracking-[0.24em] text-muted-foreground">
                 Years Experience

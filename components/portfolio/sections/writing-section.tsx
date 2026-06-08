@@ -9,7 +9,7 @@ export function WritingSection() {
       <div className="flex flex-col gap-10">
         <SectionHeader
           title="Writing"
-          description="I document what I build, what I learn, and how I think through software problems. The goal is to make engineering decisions clearer, not just to show finished products."
+          description="I write to clarify how I think through software problems: architecture decisions, AI-assisted workflows, debugging, delivery tradeoffs, and lessons from building real products."
         />
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -32,7 +32,7 @@ export function WritingSection() {
                 </h3>
               </div>
               <p className="mt-6 font-mono text-xs uppercase tracking-[0.18em] text-cyan-700 opacity-70 transition group-hover:opacity-100 dark:text-cyan-200">
-                Building in public
+                Thinking in public
               </p>
             </article>
           ))}
