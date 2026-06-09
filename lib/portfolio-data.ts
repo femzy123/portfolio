@@ -229,6 +229,7 @@ export const projects = [
       "Web3",
       "SDK",
     ],
+    url: "https://kryptopay.xyz/",
     visual: "payments",
     image:
       "https://res.cloudinary.com/femzy123/image/upload/v1781027037/kryptopay_olo8ba.png",
