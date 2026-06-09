@@ -230,6 +230,8 @@ export const projects = [
       "SDK",
     ],
     visual: "payments",
+    image:
+      "https://res.cloudinary.com/femzy123/image/upload/v1781027037/kryptopay_olo8ba.png",
   },
   {
     title: "Joyfill",
@@ -239,6 +241,8 @@ export const projects = [
     url: "https://joyfill.io/",
     tags: ["React", "TypeScript", "SDK", "Node.js", "AWS", "MongoDB"],
     visual: "forms",
+    image:
+      "https://res.cloudinary.com/femzy123/image/upload/v1781027030/joyfill_sigkyu.avif",
   },
   {
     title: "NativShark",
@@ -248,20 +252,8 @@ export const projects = [
     url: "https://www.nativshark.com/",
     tags: ["Next.js", "React", "Node.js", "Elixir", "AWS", "GraphQL"],
     visual: "learning",
-  },
-  {
-    title: "MyQuizzy",
-    description:
-      "AI study tool that turns notes into adaptive quiz practice and helps learners move from passive review to active recall.",
-    url: "https://myquizzy.vercel.app/",
-    tags: ["Next.js", "AI", "Education", "TypeScript"],
-  },
-  {
-    title: "InterviewSim",
-    description:
-      "Role-based interview preparation tool for practicing technical questions, structured answers, and interview readiness.",
-    url: "https://interviewsim.vercel.app/",
-    tags: ["Next.js", "AI", "Interview Prep", "TypeScript"],
+    image:
+      "https://res.cloudinary.com/femzy123/image/upload/v1781027048/nativshark_gy8amm.png",
   },
   {
     title: "Splendid Packaging",
@@ -269,20 +261,8 @@ export const projects = [
       "Logistics management application supporting operational workflows, product delivery, and internal business coordination.",
     url: "https://app.splendidpackaging.com",
     tags: ["React", "Logistics", "Product Engineering"],
-  },
-  {
-    title: "AI Image Generator",
-    description:
-      "AI image generation interface built around prompt input, model integration, and fast visual iteration.",
-    url: "https://fem-ai-image-gen.vercel.app/",
-    tags: ["Next.js", "OpenAI", "AI"],
-  },
-  {
-    title: "CryptoWorld",
-    description:
-      "Crypto information dashboard built with React, Redux Toolkit, and Ant Design for market data exploration.",
-    url: "https://femzy-cryptoworld.netlify.app/",
-    tags: ["React", "Redux Toolkit", "Ant Design"],
+    image:
+      "https://res.cloudinary.com/femzy123/image/upload/v1781038082/splendid_ly2yyk.png",
   },
   {
     title: "Covid Tracker",
@@ -290,13 +270,8 @@ export const projects = [
       "Data-tracking interface for exploring global COVID-related metrics through a clear frontend experience.",
     url: "https://covid-19-tracker-2257e.web.app/",
     tags: ["React", "API", "Data Visualization"],
-  },
-  {
-    title: "Femgram",
-    description:
-      "Photo gallery experience built with React, Firebase, and motion-enhanced interactions.",
-    url: "https://femgram-37983.web.app/",
-    tags: ["React", "Firebase", "Framer Motion"],
+    image:
+      "https://res.cloudinary.com/femzy123/image/upload/v1781040287/covid_icx5zo.png",
   },
 ];
 

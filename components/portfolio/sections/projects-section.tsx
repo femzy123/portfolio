@@ -25,10 +25,14 @@ export function ProjectsSection() {
           {featured.map((project) => (
             <Card
               key={project.title}
-              className="group overflow-hidden rounded-[1.7rem] border-slate-900/8 bg-white/64 shadow-[0_20px_70px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:shadow-[0_28px_90px_rgba(34,211,238,0.12)] dark:border-white/10 dark:bg-white/[0.045]"
+              className="group overflow-hidden rounded-[1.7rem] border-slate-900/8 bg-white/64 shadow-[0_20px_70px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:shadow-[0_28px_90px_rgba(34,211,238,0.12)] dark:border-white/10 dark:bg-white/4.5"
             >
               <CardContent className="flex h-full flex-col gap-5 p-4">
-                <ProjectVisual kind={project.visual} />
+                <ProjectVisual
+                  image={project.image}
+                  kind={project.visual}
+                  title={project.title}
+                />
                 <div className="flex flex-1 flex-col gap-4 p-2">
                   <div>
                     <h3 className="text-2xl font-semibold">{project.title}</h3>
@@ -57,9 +61,12 @@ export function ProjectsSection() {
           {secondary.map((project) => (
             <article
               key={project.title}
-              className="rounded-[1.4rem] border border-slate-900/8 bg-white/58 p-5 transition hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/80 dark:border-white/10 dark:bg-white/[0.04] dark:hover:bg-white/[0.06]"
+              className="rounded-[1.4rem] border border-slate-900/8 bg-white/58 p-5 transition hover:-translate-y-1 hover:border-cyan-300/28 hover:bg-white/80 dark:border-white/10 dark:bg-white/4 dark:hover:bg-white/6"
             >
               <div className="flex min-h-44 flex-col gap-4">
+                {project.image ? (
+                  <ProjectVisual image={project.image} title={project.title} />
+                ) : null}
                 <div>
                   <h3 className="text-xl font-semibold">{project.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">
