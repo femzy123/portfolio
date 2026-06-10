@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "Obafemi Ogunmokun | Software Engineer",
   description:
     "Premium portfolio for Obafemi Ogunmokun, a software engineer building full-stack products, SDKs, AI tools, and developer platforms.",
-  metadataBase: new URL("https://obafemi.dev"),
+  metadataBase: new URL("https://obafemi-portfolio.vercel.app/"),
   icons: {
     icon: "/icon.png",
     shortcut: "/favicon.ico",
