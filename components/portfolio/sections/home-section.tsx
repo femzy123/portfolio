@@ -83,8 +83,8 @@ export function HomeSection({ onViewProjects }: HomeSectionProps) {
             <div className="absolute -inset-3 rounded-full border border-cyan-300/20 shadow-[0_0_44px_rgba(34,211,238,0.28)]" />
             <div className="relative size-32 overflow-hidden rounded-full border border-cyan-200/30 bg-slate-950 p-1.5 shadow-[0_24px_80px_rgba(15,23,42,0.26),0_0_58px_rgba(34,211,238,0.22)] md:size-40">
               <Image
-                src="/assets/hero-abstract.png"
-                alt="Abstract engineering identity visual"
+                src="/my_pic.jpeg"
+                alt="Portrait of Obafemi Ogunmokun"
                 width={1024}
                 height={1024}
                 priority
